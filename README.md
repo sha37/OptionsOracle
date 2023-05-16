@@ -16,18 +16,24 @@ and find optimal trading strategies.
 
 ## Getting Started
 
+## What's New in Option Oracle v1.0.7?
+
+- Resolved the NSE server issue. Now, Option Oracle works seamlessly with NSE.
+- Added "Change OI" in the option strike table and option strategy with color code for better visibility and understanding.
+- Introduced NSE auto-complete feature in the symbol textbox for a more user-friendly experience.
+
 ### Prerequisites
 
 To use Option Oracle, you will need:
 
-- A compatible operating system (Windows, macOS, or Linux)
-- The latest version of the .NET Framework 4.8 or Mono runtime
+- You have a Windows machine.
+- You have installed .NET Framework 4.8 or later versions.
 
 ### Installation
 
-1. Download the latest release from the [releases](https://github.com/user/repository/releases) page.
-2. Extract the downloaded ZIP file to a location of your choice.
-3. Run the `OptionOracle.exe` executable to launch the application.
+1. Download the latest release from the [releases](https://github.com/sha37/OptionsOracle/releases/) page.
+2. Extract the downloaded file.
+3. Download & Copy the all xml files which is under the templates folder from the repository and paste them into `C:\Users\YOUR_USER_NAME\AppData\Roaming\OptionsOracle`.
 
 ## Usage
 
@@ -40,10 +46,22 @@ To use Option Oracle, you will need:
 
 We welcome contributions from the community to help improve Option Oracle. If you would like to contribute, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch for your changes.
-3. Commit your changes and push them to your fork.
-4. Submit a pull request with a description of your changes.
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>'`
+4. Push to the original branch: `git push origin <project_name>/<location>`
+5. Create the pull request.
+
+## Acknowledgement
+
+Special thanks to OpenAI's ChatGPT which assisted in resolving some of the issues faced during the development of this project.
+
+## Disclaimer
+
+Please note that I am not the original author of Option Oracle. I downloaded the code from Samoasky's repository and made some modifications to rectify some issues out of my own curiosity. This is not my original code.
+
+This software is provided under the MIT License. Feel free to modify the code, add functionality for other servers, and fix any issues you may encounter.
+
 
 ## License
 
