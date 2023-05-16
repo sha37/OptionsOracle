@@ -601,6 +601,7 @@ namespace OptionsOracle.Forms
                 DataGridViewCell cell_change = optionsDataGridView.Rows[e.RowIndex].Cells["optionsChangeColumn"];
                 DataGridViewCell cell_strike = optionsDataGridView.Rows[e.RowIndex].Cells["optionsStrikeColumn"];
                 DataGridViewCell cell_stddev = optionsDataGridView.Rows[e.RowIndex].Cells["optionsStdDevColumn"];
+                DataGridViewCell cell_strategy = optionsDataGridView.Rows[e.RowIndex].Cells["OptionStrategy"];
 
                 if (lprice != 0)
                 {
@@ -608,6 +609,32 @@ namespace OptionsOracle.Forms
                     else if ((string)(cell_type.Value) == "Put" && (double)cell_strike.Value >= lprice) bc = Config.Color.OptionATMStrikeBackColor;
                 }
                 e.CellStyle.BackColor = bc;
+
+                if (cell_strategy.ColumnIndex == e.ColumnIndex)
+                {
+                    if ((string)(cell_strategy.Value) == "Long Liquidation")
+                    {
+                        bc = Color.FromArgb(255, 59, 48);
+                        fc = Color.White;
+                    }
+                    else if ((string)(cell_strategy.Value) == "Long BuildUp")
+                    {
+                        bc = Color.FromArgb(76, 217, 100);
+                        fc = Color.White;
+                    }
+                    else if ((string)(cell_strategy.Value) == "Short BuildUp")
+                    {
+                        bc = Color.FromArgb(255, 149, 0);
+                        fc = Color.White;
+                    }
+                    else if ((string)(cell_strategy.Value) == "Short Covering")
+                    {
+                        bc = Color.FromArgb(156, 39, 176);
+                        fc = Color.White;
+                    }
+                }
+                e.CellStyle.BackColor = bc;
+                e.CellStyle.ForeColor = fc;
 
                 if (cell_change.ColumnIndex == e.ColumnIndex)
                 {
@@ -882,7 +909,7 @@ namespace OptionsOracle.Forms
                 if (i < expdate_list.Count)
                 {
                     DateTime expdate = (DateTime)expdate_list[i];
-                    ((RadioButton)expdate_buttons_list[i]).Text = expdate.ToString("MMM yy");
+                    ((RadioButton)expdate_buttons_list[i]).Text = expdate.ToString("dd MMM");
                     ((RadioButton)expdate_buttons_list[i]).Visible = true;
                     ((RadioButton)expdate_buttons_list[i]).Tag = @"(Expiration = '" + Global.DefaultCultureToString(expdate) + @"')";
                 }

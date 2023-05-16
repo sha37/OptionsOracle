@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<plugin xmlns="http://www.samoasky.com/optionsoracle_plugin.xml" version="2.2.0.0">
+	<server name="PlugIn Server US (CBOE)">
+		<global>
+			<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+			<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerUS.dll"/>
+		</global>
+		<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+		</authentication>
+	</server>
+	
+	<server name="PlugIn Server Israel (TA25, USDILS)">
+		<global>
+			<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+			<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerIsraelMaof.dll"/>
+		</global>
+		<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+		</authentication>
+	</server>
+	
+	<server name="PlugIn Server PHLX (Philadelphia)">
+		<global>
+			<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+			<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerPhiladelphia.dll"/>
+		</global>
+		<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+		</authentication>
+	</server>
+	
+	<server name="PlugIn Server OMX (Nordic)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerNordicEx.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server>  
+	
+	<server name="PlugIn Server OptionsOracle (DataCenter)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerDataCenter.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server> 
+	
+	<server name="PlugIn Server TradeZone Brazil (Bovespa)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerBovespaTradeZone.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server> 
+	
+	<server name="PlugIn Server Interactive-Brokers (TWS)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="upgrade"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerInteractiveBrokers.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server> 	
+
+	<server name="PlugIn Server TD-Ameritrade">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="upgrade"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerTDAmeritrade.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server>
+
+	<server name="PlugIn Server Canada (Montreal)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerMontreal.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server>
+	
+	<server name="PlugIn Server India (NSE)">
+    	<global>
+      		<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+      		<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerNSE.dll" />
+    	</global>
+    	<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+    	</authentication>
+  	</server>  	 	
+	
+	<server name="PlugIn Server Australia (ASX)">
+		<global>
+			<node name="lastest-version" value="1.8.0.0"/>
+			<node name="download-mode"   value="always"/>
+			<node name="download-page"   value="http://www.samoasky.com/download/optionsoracle_plugins/OOServerASX.dll"/>
+		</global>
+		<authentication>
+<RSAKeyValue><Modulus>otysuKHd8wjQn9Oe9m3zAJ1oXtgs9ukfvBOeEjgM/xIMpAk3pFbyT6lGBjGjBvdMTP4kyMRgBYT1SXUXKU85VulcJjvTVH6kCfq04fktoZrKswahz7XCs5tmt7E1yxnavfZddSdhwOWyjgYyCVjXMpOKIZc04XeSJO6COYptQV8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+		</authentication>
+	</server>
+</plugin>

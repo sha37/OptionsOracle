@@ -31,6 +31,12 @@ using OOServerLib.Web;
 using OOServerLib.Interface;
 using OOServerLib.Global;
 using OOServerLib.Config;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using static OOServerNSE.HAPDownload;
+using System.Web.Script.Serialization;
+using System.Linq;
+using Microsoft.CSharp;
 
 namespace OOServerNSE
 {
@@ -174,13 +180,13 @@ namespace OOServerNSE
             switch (ticker)
             {
                 case "^NIFTY":
-                    return "S&P CNX Nifty";
+                    return "NIFTY 50";
                 case "^BANKNIFTY":
-                    return "Bank Nifty";
+                    return "NIFTY BANK";
                 case "^CNXIT":
                     return "CNX IT";
                 case "^MINIFTY":
-                    return "CNX Nifty Junior";
+                    return "Nifty Next 50";
                 case "^NFTYMCAP50":
                     return "Nifty MidCap 50";
                 default:
@@ -208,340 +214,225 @@ namespace OOServerNSE
             }
         }
 
-        // get stock latest quote
+        public string GenericHAPDownload(string Url, string Referrer = "")
+        {
+            // first, get the URL
+            HAPDownload dl = new HAPDownload();
+            dl.downloadMethod = DownloadMethod.Get;
+            dl.SourceURL = Url;
+            if (Referrer != "")
+            {
+                dl.AddReferrer = true;
+                dl.Referrer = Referrer;
+            }
+
+            dl.Execute();
+
+            StreamReader sr = new StreamReader(dl.memStream);
+            string sBaseHTML = sr.ReadToEnd();
+            sr.Close();
+
+            return sBaseHTML;
+        }
+
         public Quote GetQuote(string ticker)
         {
-            // correct symbol
             ticker = CorrectSymbol(ticker);
 
+            Quote q = null;
             if (ticker.StartsWith("^"))
             {
-                // index
-                string url = @"http://www.nseindia.com/live_market/dynaContent/live_watch/live_index_watch.htm";
-
-                // get page
-                System.Windows.Forms.HtmlDocument doc = wbf.GetHtmlDocumentWithWebBrowser(url, null, null, null, 60);
-                if (doc == null || doc.Body == null || string.IsNullOrEmpty(doc.Body.InnerText)) return null;
-
                 try
                 {
-                    // patch html to bypass bug in web-page
-                    string html = doc.Body.OuterHtml;
-                    html = html.Replace("solid; 1px block;border-right:#ffffff border-right-style:", "");
-
-                    // convert web-page to xml
-                    XmlDocument xml = cap.ConvertHtmlToXml(html);
-                    if (xml == null) return null;
-
-                    XmlNode nd_table = prs.GetXmlNodeByPath(xml.FirstChild, @"DIV\DIV(3)\DIV(2)\DIV\DIV(3)\DIV(2)\DIV\TABLE");
-                    if (nd_table == null) return null;
-
-                    XmlNode nd;
-
-                    Quote quote = new Quote();
-
-                    quote.name = IndexName(ticker);
-                    quote.stock = ticker;
-                    quote.update_timestamp = DateTime.Now;
-
-                    for (int r = 2; ; r++)
+                    string url = string.Format("https://www.nseindia.com/api/allIndices", ticker.TrimStart(new char[]
                     {
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD");
-                        if (nd == null || nd.InnerText == null) return null;
-
-                        if (System.Web.HttpUtility.HtmlDecode(nd.InnerText).Trim().ToUpper() !=
-                            quote.name.Trim().ToUpper()) continue;
-
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD(2)");
-                        quote.price.last = double.NaN;
-                        if (!double.TryParse(nd.InnerText, NumberStyles.Number, ci, out quote.price.last)) return null;
-
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD(4)");
-                        quote.price.open = double.NaN;
-                        double.TryParse(nd.InnerText, NumberStyles.Number, ci, out quote.price.open);
-
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD(3)");
-                        quote.price.change = double.NaN;
-                        double.TryParse(nd.InnerText, NumberStyles.Number, ci, out quote.price.change);
-
-                        //quote.price.change = quote.price.last - quote.price.change;
-
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD(5)");
-                        quote.price.high = double.NaN;
-                        double.TryParse(nd.InnerText, NumberStyles.Number, ci, out quote.price.high);
-
-                        nd = prs.GetXmlNodeByPath(nd_table, @"TBODY\TR(" + r + @")\TD(6)");
-                        quote.price.low = double.NaN;
-                        double.TryParse(nd.InnerText, NumberStyles.Number, ci, out quote.price.low);
-
-                        quote.price.bid = double.NaN;
-                        quote.price.ask = double.NaN;
-
-                        quote.volume.total = double.NaN;
-                        quote.general.dividend_rate = 0;
-
-                        return quote;
-                    }
-                }
-                catch { }
-            }
-            else
-            {
-                // stock
-                string url = string.Format(@"http://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/GetQuote.jsp?symbol={0}", ticker);
-
-                // get page
-                System.Windows.Forms.HtmlDocument doc = wbf.GetHtmlDocumentWithWebBrowser(url, null, null, null, 60);
-                if (doc == null || doc.Body == null || string.IsNullOrEmpty(doc.Body.InnerText))
-                {
-                    doc = wbf.GetHtmlDocumentWithWebBrowser(url, null, null, null, 60);
-                    if (doc == null || doc.Body == null || string.IsNullOrEmpty(doc.Body.InnerText)) return null;
-                }
-
-                try
-                {
-                    // patch html to bypass bug in web-page
-                    string html = doc.Body.OuterHtml;
-                    html = html.Replace("solid; 1px block;border-right:#ffffff border-right-style:", "");
-
-                    // convert web-page to xml
-                    XmlDocument xml = cap.ConvertHtmlToXml(html);
-                    if (xml == null) return null;
-
-                    XmlNode json_nd = prs.GetXmlNodeByPath(xml.FirstChild, @"DIV\DIV(3)");
-
-                    Dictionary<string, string> quote_dict = new Dictionary<string,string>();
-
-                    foreach (string pair in json_nd.InnerText.Replace("{","").Replace("}","").Split(','))
+                '^'
+                    }));
+                    string url2 = string.Format("https://www.nseindia.com/api/allIndices", ticker.TrimStart(new char[]
                     {
-                        string[] ps = pair.Split(':');
-                        if (ps.Length == 2) quote_dict.Add(ps[0].TrimEnd('"').TrimStart('"'), ps[1].TrimEnd(']').TrimStart('[').TrimEnd('"').TrimStart('"'));
+                '^'
+                    }));
+                    string text = this.GenericHAPDownload(url);
+                    if (!text.Contains("indexSymbol"))
+                    {
+                        Thread.Sleep(1000);
+                        text = this.GenericHAPDownload(url2);
                     }
 
-                    XmlNode nd;
+                    string text2 = text;
 
+                    if (text2 == null || string.IsNullOrEmpty(text2)) return null;
+
+                    text2 = text2.Replace("<BODY><PRE>{\"data\":[", "");
+
+                    JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+                    javaScriptSerializer.MaxJsonLength = int.MaxValue;
+
+                    object arg = javaScriptSerializer.Deserialize<object>(text2);
+                    var data = (JObject)JsonConvert.DeserializeObject(text2);
+
+                    string tickername = IndexName(ticker);
+
+                    JArray dataArray = (JArray)data["data"];
+                    JObject INDICES = (JObject)dataArray.FirstOrDefault(x => (string)x["index"] == tickername);
                     Quote quote = new Quote();
 
-                    quote.name = quote_dict["companyName"];
-                    quote.stock = ticker;
-                    quote.update_timestamp = DateTime.Now;
 
-                    // price information table
+                    if (INDICES != null)
+                    {
+                        quote = new Quote();
+                        foreach (var property in INDICES.Properties())
+                        {
 
-                    quote.price.last = double.NaN;
-                    if (!double.TryParse(quote_dict["lastPrice"], NumberStyles.Number, ci, out quote.price.last)) return null;
+                            quote.name = tickername;
+                            quote.price.last = Convert.ToDouble((property.Name == "last") ? property.Value : quote.price.last);
+                            quote.price.change = Convert.ToDouble((property.Name == "last") ? property.Value : quote.price.change);
+                            quote.price.open = Convert.ToDouble((property.Name == "open") ? property.Value : quote.price.open);
+                            quote.price.high = Convert.ToDouble((property.Name == "high") ? property.Value : quote.price.high);
+                            quote.price.low = Convert.ToDouble((property.Name == "low") ? property.Value : quote.price.low);
+                            quote.stock = ticker.TrimStart(new char[] { '^' });
+                            quote.update_timestamp = DateTime.Now;
 
-                    quote.price.change = double.NaN;
-                    double.TryParse(quote_dict["change"], NumberStyles.Number, ci, out quote.price.change);
+                            //quote.price.change = quote.price.last - Convert.ToDouble((property.Name == "last") ? property.Value : quote.price.last);
 
-                    quote.price.open = quote.price.last - quote.price.change;
+                            quote.price.bid = double.NaN;
+                            quote.price.ask = double.NaN;
 
-                    quote.price.high = double.NaN;
-                    double.TryParse(quote_dict["dayHigh"], NumberStyles.Number, ci, out quote.price.high);
+                            quote.volume.total = double.NaN;
+                            quote.general.dividend_rate = 0;
+                        }
+                        quote.price.change = quote.price.last - quote.price.open;
 
-                    quote.price.low = double.NaN;
-                    double.TryParse(quote_dict["dayLow"], NumberStyles.Number, ci, out quote.price.low);
-
-                    quote.volume.total = double.NaN;
-                    double.TryParse(quote_dict["totalTradedVolume"], NumberStyles.Number, ci, out quote.volume.total);
-
-                    // order book table
-
-                    quote.price.bid = double.NaN;
-                    double.TryParse(quote_dict["buyPrice1"], NumberStyles.Number, ci, out quote.price.bid);
-
-                    quote.price.ask = double.NaN;
-                    double.TryParse(quote_dict["sellPrice1"], NumberStyles.Number, ci, out quote.price.ask);
-
-                    quote.general.dividend_rate = 0;
-
-                    // fallback last price to mid-price
-                    if (quote.price.last == 0 && quote.price.bid > 0 && !double.IsNaN(quote.price.bid) && quote.price.ask > 0 && !double.IsNaN(quote.price.ask))
-                        quote.price.last = (quote.price.bid + quote.price.ask) * 0.5;
-
+                    }
                     return quote;
                 }
                 catch { }
             }
 
-            return null;
+            else
+            {
+                // stock
+                string url = string.Format(@"http://www.nseindia.com/api/quote-equity?symbol={0}", ticker);
+                string url2 = string.Format(@"http://www.nseindia.com/api/quote-equity?symbol={0}", ticker);
+
+
+                string text = this.GenericHAPDownload(url);
+                if (!text.Contains("companyName"))
+                {
+                    Thread.Sleep(1000);
+                    text = this.GenericHAPDownload(url2);
+                }
+
+
+                if (text == null || string.IsNullOrEmpty(text)) return null;
+
+                text = text.Replace("<BODY><PRE>{\"data\":[", "");
+
+                try
+                {
+                    dynamic equityResult = JsonConvert.DeserializeObject(text);
+                    Quote quote = new Quote();
+
+                    quote.name = equityResult.info.companyName;
+                    quote.stock = ticker;
+
+                    quote.price.last = equityResult.priceInfo.lastPrice;
+                    quote.price.change = Convert.ToDouble(equityResult.priceInfo.change);
+                    quote.price.open = Convert.ToDouble(equityResult.priceInfo.open);
+
+                    quote.price.high = Convert.ToDouble(equityResult.priceInfo.intraDayHighLow.max);
+                    quote.price.low = Convert.ToDouble(equityResult.priceInfo.intraDayHighLow.min);
+
+                    quote.update_timestamp = DateTime.Now;
+                    quote.price.bid = double.NaN;
+                    quote.price.ask = double.NaN;
+
+                    quote.volume.total = double.NaN;
+                    quote.general.dividend_rate = 0;
+
+                    return quote;
+
+                }
+                catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            }
+            return q;
         }
 
         // get stock latest options chain
         public ArrayList GetOptionsChain(string ticker)
         {
-            // correct symbol
-            ticker = CorrectSymbol(ticker);
+            //BackgroundWorker bw = null;
+            //if (host != null) bw = host.BackgroundWorker;
+            //int last = -1;
 
-            string url;
-
-            if (ticker.StartsWith("^"))
-                url = string.Format(@"http://www.nseindia.com/live_market/dynaContent/live_watch/option_chain/optionKeys.jsp?symbol={0}&instrument=OPTIDX&date=-", ticker.TrimStart(new char[] { '^' }));
-            else
-                url = string.Format(@"http://www.nseindia.com/live_market/dynaContent/live_watch/option_chain/optionKeys.jsp?symbol={0}&instrument=OPTSTK&date=-", ticker.TrimStart(new char[] { '^' }));
-
-            // get page
-            HtmlDocument doc = wbf.GetHtmlDocumentWithWebBrowser(url, null, null, null, 60);
-            if (doc == null || doc.Body == null || string.IsNullOrEmpty(doc.Body.InnerText)) return null;
-
-            // patch html to bypass bug in web-page
-            string html = doc.Body.OuterHtml;
-            html = html.Replace("solid; 1px block;border-right:#ffffff border-right-style:", "");
-
-            // convert web-page to xml
-            XmlDocument xml = cap.ConvertHtmlToXml(html);
-            if (xml == null) return null;
-
-            XmlNode nd, select_nd;
-            List<string> expdate_list = new List<string>();
-
-            select_nd = prs.FindXmlNodeByName(xml.FirstChild, "SELECT", "", 2, 0);
-            if (select_nd == null) return null;
-
-            for (int r = 2; ; r++)
+            try
             {
-                nd = prs.FindXmlNodeByName(select_nd, "OPTION", "", r, 0);
-                if (nd == null || nd.InnerText == null) break;
-                expdate_list.Add(nd.InnerText.Trim());
-            }
 
-            // create options array list
-            ArrayList options_list = new ArrayList();
-            options_list.Clear();
-            options_list.Capacity = 1024;
+                // correct symbol
+                ticker = CorrectSymbol(ticker);
 
-            int i = 0;
+                string url;
 
-            foreach(string expdate in expdate_list)
-            {
-                if (expdate == "") continue;
+                url = ticker.StartsWith("^") ? string.Format(@"https://www.nseindia.com/api/option-chain-indices?symbol={0}", ticker.TrimStart(new char[] { '^' })) :
+                    string.Format(@"https://www.nseindia.com/api/option-chain-equities?symbol={0}", ticker.TrimStart(new char[] { '^' }));
+                string text = this.GenericHAPDownload(url);
 
-                if (i++ > 0)
+
+                JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(text);
+
+                JArray optionDataArray = (JArray)jsonResponse["records"]["data"];
+
+
+                ArrayList options_list = new ArrayList();
+                options_list.Clear();
+                options_list.Capacity = 1024;
+
+                foreach (JObject optionData in optionDataArray)
                 {
-                    if (ticker.StartsWith("^"))
-                        url = string.Format(@"http://www.nseindia.com/live_market/dynaContent/live_watch/option_chain/optionKeys.jsp?symbol={0}&instrument=OPTIDX&date={1}", ticker.TrimStart(new char[] { '^' }), expdate);
-                    else
-                        url = string.Format(@"http://www.nseindia.com/live_market/dynaContent/live_watch/option_chain/optionKeys.jsp?symbol={0}&instrument=OPTSTK&date={1}", ticker.TrimStart(new char[] { '^' }), expdate);
-
-                    // get page
-                    doc = wbf.GetHtmlDocumentWithWebBrowser(url, null, null, null, 60);
-                    if (doc == null || doc.Body == null || string.IsNullOrEmpty(doc.Body.InnerText)) return null;
-
-                    // patch html to bypass bug in web-page
-                    html = doc.Body.OuterHtml;
-                    html = html.Replace("solid; 1px block;border-right:#ffffff border-right-style:", "");
-
-                    // convert web-page to xml
-                    xml = cap.ConvertHtmlToXml(html);
-                    if (xml == null) return null;
-                }
-
-                // report progress
-                if (host.BackgroundWorker != null)
-                    host.BackgroundWorker.ReportProgress(100 * i / expdate_list.Count);
-
-                // option chain table
-
-                HtmlElement elem = WebForm.LocateParentElement(doc, "Volume", 1, "TABLE");
-                if (elem == null) continue;
-
-                xml = cap.ConvertHtmlToXml(elem.OuterHtml);
-                if (xml == null) continue;
-
-                for (int r = 1; ; r++)
-                {
-                    XmlNode row_nd = prs.GetXmlNodeByPath(xml.FirstChild, @"TBODY\TR(" + r + @")");
-                    if (row_nd == null) break;
-
-                    for (int j = 1; j <= 2; j++)
+                    if (optionData["CE"] != null)
                     {
-                        try
-                        {
-                            Option option = new Option();
-
-                            // option stock ticker and number of stocks per contract
-                            option.stock = ticker;
-                            option.stocks_per_contract = 1;
-                            option.update_timestamp = DateTime.Now;
-
-                            // option type
-                            if (j == 2) option.type = "Put";
-                            else if (j == 1) option.type = "Call";
-                            else continue;
-
-                            // get option detail link
-                            string symbol_href = null;
-
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 1 : 23) + @")\A");
-                            try
-                            {
-                                if (nd != null && nd.Attributes != null)
-                                {
-                                    foreach (XmlAttribute attr in nd.Attributes) if (attr.Name == "href")
-                                        {
-                                            symbol_href = System.Web.HttpUtility.HtmlDecode(attr.Value).Trim();
-                                            break;
-                                        }
-                                }
-                            }
-                            catch { }
-                            if (symbol_href == null) continue;
-
-                            // symbol
-                            option.symbol = "." + symbol_href.Replace("javascript:chartPopup(", "").Replace(");", "").Replace(" ", "").Replace(",", "").Replace(".", "").Replace("'", "");
-
-                            // expiration date
-                            DateTime.TryParse(expdate, ci, DateTimeStyles.None, out option.expiration);
-
-                            // strike price
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(12)");
-                            if (nd == null || nd.InnerText == null ||
-                                !double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.strike)) continue;
-
-                            // option bid price
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 9 : 14) + @")");
-                            option.price.bid = double.NaN;
-                            if (nd.InnerText != "-")
-                                double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.price.bid);
-
-                            // option ask price
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 10 : 15) + @")");
-                            option.price.ask = double.NaN;
-                            if (nd.InnerText != "-")
-                                double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.price.ask);
-
-                            // option last price
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 6 : 18) + @")");
-                            option.price.last = double.NaN;
-                            if (nd.InnerText != "-")
-                                double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.price.last);
-
-                            // option price change
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 7 : 17) + @")");
-                            option.price.change = double.NaN;
-                            if (nd.InnerText != "-")
-                                double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.price.change);
-
-                            // option volume
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 4 : 20) + @")");
-                            option.volume.total = 0;
-                            if (nd.InnerText != "-")
-                                double.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.volume.total);
-
-                            // open int
-                            nd = prs.GetXmlNodeByPath(row_nd, @"TD(" + ((j == 1) ? 2 : 22) + @")");
-                            option.open_int = 0;
-                            if (nd.InnerText != "-")
-                                int.TryParse(nd.InnerText, NumberStyles.Number, ci, out option.open_int);
-
-                            options_list.Add(option);
-                        }
-                        catch { }
+                        Option callOption = ParseOptionData((JObject)optionData["CE"], Option.OptionT.Call);
+                        options_list.Add(callOption);
                     }
-                }
-            }
 
-            return options_list;
+                    if (optionData["PE"] != null)
+                    {
+                        Option putOption = ParseOptionData((JObject)optionData["PE"], Option.OptionT.Put);
+                        options_list.Add(putOption);
+                    }
+
+                }
+
+                if (options_list.Count > 0) return options_list;
+            }
+            catch {; }
+            
+            return null;
+        }
+
+        public static Option ParseOptionData(JObject optionData, Option.OptionT optionType)
+        {
+            Option option = new Option
+            {
+                type = optionType == Option.OptionT.Call ? "Call" : "Put",
+                stock = (string)optionData["underlying"],
+                symbol = optionData["identifier"].ToString(),
+                strike = optionData["strikePrice"].Value<double>(),
+                expiration = DateTime.Parse(optionData["expiryDate"].ToString()),
+                open_int = optionData["openInterest"].Value<int>(),
+                update_timestamp = DateTime.Now, // or use another field if available in the API
+                ChangeOI = optionData["changeinOpenInterest"].Value<double>(),
+                stocks_per_contract = Option.DEFAULT_STOCKS_PER_CONTRACT
+            };
+
+            option.price.last = optionData["lastPrice"].Value<double>();
+            option.price.change = optionData["change"].Value<double>();
+            option.price.bid = optionData["bidprice"].Value<double>();
+            option.price.ask = optionData["askPrice"].Value<double>();
+
+            option.volume.total = optionData["totalTradedVolume"].Value<double>();
+
+            return option;
         }
 
         // get stock/option historical prices 

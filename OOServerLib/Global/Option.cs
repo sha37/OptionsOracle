@@ -55,6 +55,7 @@ namespace OOServerLib.Global
         public VolumeT  volume;
         public int      open_int;        
         public DateTime update_timestamp;
+        public double ChangeOI;
         public double   stocks_per_contract = DEFAULT_STOCKS_PER_CONTRACT;
 
         // internal value (calculated and used internally by OptionOracle)

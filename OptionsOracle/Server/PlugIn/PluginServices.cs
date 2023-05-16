@@ -119,9 +119,9 @@ namespace OptionsOracle.Server.PlugIn
 			foreach (string fileOn in Directory.GetFiles(Path))
 			{
 				FileInfo file = new FileInfo(fileOn);
-				
+
 				//Preliminary check, must be .dll
-				if (file.Extension.Equals(".dll"))
+				if (file.Extension.Equals(".dll") && file.Name.StartsWith("O"))
 				{	
 					//Add the 'plugin'
 					this.AddPlugin(fileOn);				
@@ -225,8 +225,8 @@ namespace OptionsOracle.Server.PlugIn
         private void CheckUpdates()
         {
             if (remote == null) return;
-
-            for (int i = 0; ; i++)
+			if (remote.Xml == null) return;
+			for (int i = 0; ; i++)
             {
                 // get server name
                 string server_name = remote.GetAttributeByIndex(null, i, "server", "name");

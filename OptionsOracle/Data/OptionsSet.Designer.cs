@@ -607,6 +607,10 @@ namespace OptionsOracle.Data {
             
             private global::System.Data.DataColumn columnIndicator2;
             
+            private global::System.Data.DataColumn columnChange_OI;
+            
+            private global::System.Data.DataColumn columnOptionStrategy;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OptionsTableDataTable() {
@@ -834,6 +838,22 @@ namespace OptionsOracle.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Change_OIColumn {
+                get {
+                    return this.columnChange_OI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OptionStrategyColumn {
+                get {
+                    return this.columnOptionStrategy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -893,7 +913,9 @@ namespace OptionsOracle.Data {
                         double ITMProb, 
                         double StdDevFromStock, 
                         double Indicator1, 
-                        double Indicator2) {
+                        double Indicator2, 
+                        double Change_OI, 
+                        string OptionStrategy) {
                 OptionsTableRow rowOptionsTableRow = ((OptionsTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Type,
@@ -919,7 +941,9 @@ namespace OptionsOracle.Data {
                         ITMProb,
                         StdDevFromStock,
                         Indicator1,
-                        Indicator2};
+                        Indicator2,
+                        Change_OI,
+                        OptionStrategy};
                 rowOptionsTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOptionsTableRow);
                 return rowOptionsTableRow;
@@ -973,6 +997,8 @@ namespace OptionsOracle.Data {
                 this.columnStdDevFromStock = base.Columns["StdDevFromStock"];
                 this.columnIndicator1 = base.Columns["Indicator1"];
                 this.columnIndicator2 = base.Columns["Indicator2"];
+                this.columnChange_OI = base.Columns["Change_OI"];
+                this.columnOptionStrategy = base.Columns["OptionStrategy"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1026,6 +1052,10 @@ namespace OptionsOracle.Data {
                 base.Columns.Add(this.columnIndicator1);
                 this.columnIndicator2 = new global::System.Data.DataColumn("Indicator2", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIndicator2);
+                this.columnChange_OI = new global::System.Data.DataColumn("Change_OI", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChange_OI);
+                this.columnOptionStrategy = new global::System.Data.DataColumn("OptionStrategy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionStrategy);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSymbol}, true));
                 this.columnSymbol.AllowDBNull = false;
@@ -4503,6 +4533,38 @@ namespace OptionsOracle.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Change_OI {
+                get {
+                    try {
+                        return ((double)(this[this.tableOptionsTable.Change_OIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Change_OI\' in table \'OptionsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptionsTable.Change_OIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string OptionStrategy {
+                get {
+                    try {
+                        return ((string)(this[this.tableOptionsTable.OptionStrategyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionStrategy\' in table \'OptionsTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptionsTable.OptionStrategyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableOptionsTable.TypeColumn);
             }
@@ -4763,6 +4825,30 @@ namespace OptionsOracle.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetIndicator2Null() {
                 this[this.tableOptionsTable.Indicator2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsChange_OINull() {
+                return this.IsNull(this.tableOptionsTable.Change_OIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetChange_OINull() {
+                this[this.tableOptionsTable.Change_OIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsOptionStrategyNull() {
+                return this.IsNull(this.tableOptionsTable.OptionStrategyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetOptionStrategyNull() {
+                this[this.tableOptionsTable.OptionStrategyColumn] = global::System.Convert.DBNull;
             }
         }
         

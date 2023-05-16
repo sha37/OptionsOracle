@@ -919,6 +919,10 @@ namespace OptionsOracle.Data
                         StrikeTable.Rows.Add(newrow);
                     }
                 }
+                DataRow dr = StrikeTable.NewRow();
+                dr["Strike"] = 0;
+                dr["StrikeString"] = "ALL";
+                StrikeTable.Rows.InsertAt(dr, 0);
 
                 // get rows sorted by symbol
                 DataRow[] rows3 = OptionsTable.Select("Stock = '" + stock + "'", "Symbol");
@@ -1043,6 +1047,9 @@ namespace OptionsOracle.Data
                 if (!double.IsNaN(option.price.last)) row.Last = option.price.last;
                 else row.SetLastNull();
 
+                if (!double.IsNaN(option.ChangeOI)) row.Change_OI = option.ChangeOI;
+                else row.SetChange_OINull();
+
                 if (!double.IsNaN(option.price.change)) row.Change = option.price.change;
                 else row.SetChangeNull();
 
@@ -1054,6 +1061,27 @@ namespace OptionsOracle.Data
 
                 if (!double.IsNaN(option.price.ask)) row.Ask = option.price.ask;
                 else row.SetAskNull();
+
+                if (option.price.change == 0 && option.ChangeOI == 0)
+                {
+                    row.OptionStrategy = "";
+                }
+                else if (option.price.change <= 0 && option.ChangeOI <= 0)
+                {
+                    row.OptionStrategy = "Long Liquidation";
+                }
+                else if (option.price.change >= 0 && option.ChangeOI >= 0)
+                {
+                    row.OptionStrategy = "Long BuildUp";
+                }
+                else if (option.price.change <= 0 && option.ChangeOI >= 0)
+                {
+                    row.OptionStrategy = "Short BuildUp";
+                }
+                else if (option.price.change >= 0 && option.ChangeOI <= 0)
+                {
+                    row.OptionStrategy = "Short Covering";
+                }
 
                 row.Volume = option.volume.total;
                 row.OpenInt = option.open_int;
