@@ -85,6 +85,9 @@ namespace OptionsOracle.Forms
         // command line arguments
         private string[] args = null;
 
+        //init forms
+        private VolatilityForm volatilityForm;
+
         // wizard delegate
         public delegate void PushWizardPositionDelegate(string symbol, string position, DateTime end_date);
         public delegate void PushPortfolioStrategyDelegate(string opo_file);
@@ -2625,9 +2628,20 @@ namespace OptionsOracle.Forms
 
         private void volatilityCalcButton_Click(object sender, EventArgs e)
         {
-            VolatilityForm volatilityForm = new VolatilityForm(core);
-            UpdateFormTitle(volatilityForm, core.StockName);
-            volatilityForm.Show();
+            if (this.volatilityForm == null || this.volatilityForm.Text == "")
+            {
+                this.volatilityForm = new VolatilityForm(this.core);
+                this.UpdateFormTitle(this.volatilityForm, this.core.StockName);
+                this.volatilityForm.Show();
+                return;
+            }
+            this.volatilityForm.Show();
+            this.volatilityForm.Focus();
+            if (this.volatilityForm.WindowState == FormWindowState.Minimized)
+            {
+                this.volatilityForm.WindowState = FormWindowState.Normal;
+            }
+            this.volatilityForm.BringToFront();
         }
 
 

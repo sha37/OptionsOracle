@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="HAPDownload.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="MetaYahooJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForm.cs">
       <SubType>Form</SubType>

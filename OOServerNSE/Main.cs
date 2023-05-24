@@ -37,6 +37,7 @@ using static OOServerNSE.HAPDownload;
 using System.Web.Script.Serialization;
 using System.Linq;
 using Microsoft.CSharp;
+using System.Text.RegularExpressions;
 
 namespace OOServerNSE
 {
@@ -441,42 +442,30 @@ namespace OOServerNSE
             // correct symbol
             ticker = CorrectSymbol(ticker);
 
-            double p_factor = 1.0;
-
             ArrayList list = new ArrayList();
 
-            string em = (end.Month - 1).ToString();
-            string ed = (end.Day).ToString();
-            string ey = (end.Year).ToString();
-            string sm = (start.Month - 1).ToString();
-            string sd = (start.Day).ToString();
-            string sy = (start.Year).ToString();
+            string json = GenericHAPDownload("https://query1.finance.yahoo.com/v7/finance/chart/" + System.Web.HttpUtility.UrlEncode(this.YahooSymbol(ticker)) + "?range=1y&interval=1d&indicators=quote&includeTimestamps=true&includePrePost=false&corsDomain=finance.yahoo.com");
 
-            string page = cap.DownloadHtmlWebPage(@"http://ichart.yahoo.com/table.csv?s=" + YahooSymbol(ticker) + @"&d=" + em + @"&e=" + ed + @"&f=" + ey + @"&g=d&a=" + sm + @"&b=" + sd + @"&c=" + sy + @"&ignore=.csv");
+            HistoryJson historyJson = JsonConvert.DeserializeObject<HistoryJson>(json);
 
-            string[] split1 = page.Split(new char[] { '\r', '\n' });
-
-            for (int i = 1; i < split1.Length; i++)
+            for (int i = 0; i < historyJson.chart.result[0].timestamp.Count; i++)
             {
-                History history = new History();
-                history.stock = ticker;
-
                 try
                 {
-                    string[] split2 = split1[i].Split(new char[] { ',' });
-                    if (split2.Length < 6) continue;
-
-                    history.date = Convert.ToDateTime(split2[0], ci);
-                    history.price.open = Convert.ToDouble(split2[1], ci) * p_factor;
-                    history.price.high = Convert.ToDouble(split2[2], ci) * p_factor;
-                    history.price.low = Convert.ToDouble(split2[3], ci) * p_factor;
-                    history.price.close = Convert.ToDouble(split2[4], ci) * p_factor;
-                    history.price.close_adj = Convert.ToDouble(split2[6], ci) * p_factor;
-                    history.volume.total = Convert.ToDouble(split2[5], ci);
+                    History history = new History();
+                    history.stock = historyJson.chart.result[0].meta.symbol;
+                    history.price.open = historyJson.chart.result[0].indicators.quote[0].open[i];
+                    history.price.low = historyJson.chart.result[0].indicators.quote[0].low[i];
+                    history.price.high = historyJson.chart.result[0].indicators.quote[0].high[i];
+                    history.price.close = historyJson.chart.result[0].indicators.quote[0].close[i];
+                    history.price.close_adj = historyJson.chart.result[0].indicators.adjclose[0].adjclose[i];
+                    history.volume.total = historyJson.chart.result[0].indicators.quote[0].volume[i];
+                    history.date = DateTimeOffset.FromUnixTimeSeconds(historyJson.chart.result[0].timestamp[i]).DateTime;
 
                     list.Add(history);
                 }
-                catch { }
+                catch{; }
+                
             }
 
             // update open values            
