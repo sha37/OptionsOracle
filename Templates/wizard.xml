@@ -6,7 +6,7 @@
       <Type>Long Stock</Type>
       <Quantity>100</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_stock</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_stock</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bullish: Long Call">
@@ -17,7 +17,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_call</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_call</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bullish: Short Put">
@@ -28,7 +28,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_put</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_put</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bullish: Covered Call">
@@ -39,7 +39,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#covered_call</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#covered_call</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -57,7 +57,7 @@
       <Strike1>Stock-Price</Strike1>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#covered_call_otm</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#covered_call_otm</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -75,7 +75,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#covered_call_itm</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#covered_call_itm</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -91,7 +91,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#covered_straddle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#covered_straddle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -118,7 +118,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#synthetic_long_stock</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#synthetic_long_stock</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -140,7 +140,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_call_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_call_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -162,7 +162,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_put_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_put_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -184,7 +184,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>2</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_diagonal_call_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_diagonal_call_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -206,7 +206,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>2</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_diagonal_put_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_diagonal_put_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -228,7 +228,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_bull_collar</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_bull_collar</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -257,7 +257,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_bull_collar</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_bull_collar</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -284,7 +284,7 @@
       <Type>Short Call</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_call_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_call_calendar_spread</Description>
       <TM>OTM 1</TM>
       <EX>1</EX>
     </WizardTable>
@@ -308,7 +308,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_call_ratio_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_call_ratio_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -330,7 +330,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_call_ratio_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_call_ratio_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -361,7 +361,7 @@
       <Type>Short Stock</Type>
       <Quantity>100</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_stock</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_stock</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bearish: Short Call">
@@ -372,7 +372,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_call</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_call</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bearish: Long Put">
@@ -383,7 +383,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_put</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_put</Description>
     </WizardTable>
   </strategy>
   <strategy name="Bearish: Covered Put">
@@ -394,7 +394,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#covered_put</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#covered_put</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -410,7 +410,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_call_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_call_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -432,7 +432,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_put_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_put_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -454,7 +454,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_diagonal_call_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_diagonal_call_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -476,7 +476,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_diagonal_put_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_diagonal_put_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -498,7 +498,7 @@
       <EndDate>Auto</EndDate>
       <TM>ITM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_bear_collar</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_bear_collar</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -527,7 +527,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_bear_collar</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_bear_collar</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -554,7 +554,7 @@
       <Type>Short Put</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_put_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_put_calendar_spread</Description>
       <TM>OTM 1</TM>
       <EX>1</EX>
     </WizardTable>
@@ -578,7 +578,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bear_put_ratio_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bear_put_ratio_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -600,7 +600,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#bull_call_ratio_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#bull_call_ratio_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -633,7 +633,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_straddle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_straddle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -655,7 +655,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_strangle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_strangle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -677,7 +677,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_straddle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_straddle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -699,7 +699,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_put_synthetic_straddle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_put_synthetic_straddle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -715,7 +715,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_call_synthetic_straddle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_call_synthetic_straddle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -731,7 +731,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 3</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#short_strangle</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#short_strangle</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -753,7 +753,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#ratio_covered_call</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#ratio_covered_call</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -769,7 +769,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#ratio_call_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#ratio_call_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -785,7 +785,7 @@
       <Type>Short Call</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#call_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#call_calendar_spread</Description>
       <TM>ATM</TM>
       <EX>1</EX>
     </WizardTable>
@@ -807,7 +807,7 @@
       <Type>Short Put</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#put_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#put_calendar_spread</Description>
       <TM>ATM</TM>
       <EX>1</EX>
     </WizardTable>
@@ -829,7 +829,7 @@
       <Type>Long Call</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#reverse_call_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#reverse_call_calendar_spread</Description>
       <TM>ATM</TM>
       <EX>1</EX>
     </WizardTable>
@@ -851,7 +851,7 @@
       <Type>Long Put</Type>
       <Quantity>1</Quantity>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#reverse_put_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#reverse_put_calendar_spread</Description>
       <TM>ATM</TM>
       <EX>1</EX>
     </WizardTable>
@@ -878,7 +878,7 @@
       <ExpirationSign1>=</ExpirationSign1>
       <Expiration1>Expiration 1</Expiration1>
       <EndDate>Auto</EndDate>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#double_calendar_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#double_calendar_spread</Description>
       <TM>OTM 1</TM>
       <EX>1</EX>
     </WizardTable>
@@ -924,7 +924,7 @@
       <EndDate>Auto</EndDate>
       <TM>ATM</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_butterfly</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_butterfly</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -970,7 +970,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 1</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#double_diagonal_spread</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#double_diagonal_spread</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>
@@ -1016,7 +1016,7 @@
       <EndDate>Auto</EndDate>
       <TM>OTM 2</TM>
       <EX>1</EX>
-      <Description>http://optionsgreek.blogspot.com/p/strategies.html#long_iron_condor</Description>
+      <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html#long_iron_condor</Description>
     </WizardTable>
     <WizardTable>
       <Index>B</Index>

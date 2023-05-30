@@ -6,7 +6,7 @@
     <Name>A/B Spread</Name>
     <Equation>(Option.Ask - Option.Bid)*2 / (Option.Ask + Option.Bid)</Equation>
     <Format>P2</Format>
-    <Description>http://optionsgreek.blogspot.com/p/strategies.html</Description>
+    <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html</Description>
      </IndicatorTable>
   </indicator>
    <indicator name="Days to Expiry">
@@ -15,7 +15,7 @@
     <Name>Days to Expiry</Name>
     <Equation>Math.ceil(Option.TimeToExpiration*365)</Equation>
     <Format>N0</Format>
-    <Description>http://optionsgreek.blogspot.com/p/strategies.html</Description>
+    <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html</Description>
      </IndicatorTable>
   </indicator>
   <indicator name="Elasticity">
@@ -24,7 +24,7 @@
     <Name>Elasticity</Name>
     <Equation>(Option.Delta*Stock.Last*Option.Bid) / (Option.Ask*Option.Ask)</Equation>
     <Format>N2</Format>
-    <Description>http://optionsgreek.blogspot.com/p/strategies.html</Description>
+    <Description>http://www.samoasky.com/optionsoracle_wizard/strategies.html</Description>
      </IndicatorTable>
   </indicator>
 </indicator>

@@ -16,12 +16,17 @@ and find optimal trading strategies.
 
 ## Getting Started
 
-## What's New in Option Oracle v1.0.8? (latest)
+## What's New in Option Oracle v1.7.0? (latest)
 
+    -Removed extra side banners for a more streamlined and spacious viewing experience.
+    -Unified our XML structures to improve data management efficiency.
+    -Enhanced the loading form to make data loading smoother and quicker.
+
+##v1.0.8
 -Implemented GetHistoricalData for NSE (National Stock Exchange) using Yahoo Finance.
 -Fixed a deadlock bug in VolatilityForm.
 
-##v1.0.8
+##v1.0.7
 - Resolved the NSE server issue. Now, Option Oracle works seamlessly with NSE.
 - Added "Change OI" in the option strike table and option strategy with color code for better visibility and understanding.
 - Introduced NSE auto-complete feature in the symbol textbox for a more user-friendly experience.

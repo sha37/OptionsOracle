@@ -275,11 +275,6 @@ namespace OptionsOracle.Forms
                 titlePanelWebBrowser.Tag = Config.Remote.GetRemoteModuleUrl("title");
                 titlePanelWebBrowser.Url = new Uri(titlePanelWebBrowser.Tag.ToString());
 
-                topPanelWebBrowser.Tag = Config.Local.FirstRun ? Config.Remote.GetRemoteModuleUrl("welcome") : Config.Remote.GetSponsorUrl();
-                topPanelWebBrowser.Url = new Uri(topPanelWebBrowser.Tag.ToString());
-
-                bottomPanelWebBrowser.Tag = Config.Remote.GetRemoteModuleUrl("message");
-                bottomPanelWebBrowser.Url = new Uri(bottomPanelWebBrowser.Tag.ToString());
             }
             catch { }
 
@@ -2824,11 +2819,6 @@ namespace OptionsOracle.Forms
         {
             string link = LinksConfig.GetQuickLink(e.ClickedItem.Text, core.StockSymbol);
             if (link != null) Global.OpenExternalBrowser(link);
-        }
-
-        private void webRefreshTimer_Tick(object sender, EventArgs e)
-        {
-            topPanelWebBrowser.Refresh();
         }
     }
 }
