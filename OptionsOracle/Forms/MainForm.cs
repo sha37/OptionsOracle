@@ -346,6 +346,12 @@ namespace OptionsOracle.Forms
             }
             catch { }
 
+            //try to add stock lists
+            try
+            {
+
+            }
+            catch {; }
             // link data grid view to core data
             optionsTableBindingSource.DataSource = core.OptionsTable;
             positionsTableBindingSource.DataSource = core.PositionsTable;
@@ -480,6 +486,20 @@ namespace OptionsOracle.Forms
                 filter += "(" + e_filter + ")";
             }
 
+            string comvalue = strikeComboBox.Text.ToString();
+            if (strikeComboBox.Text != "ALL")
+            {
+                if (strikeComboBox.Text != "")
+                {
+                    if (comvalue != "System.Data.DataRowView")
+                    {
+                        string strikefilter = "(Strike='" + comvalue + @"')";
+                        if (filter != "") filter += " AND ";
+                        filter += strikefilter;
+                    }
+                }
+
+            }
             optionsDataGridView_RefreshOptionsTableView(filter);
         }
 
@@ -961,6 +981,7 @@ namespace OptionsOracle.Forms
             optionSelectionGroupBox2.Enabled = optionSelectionGroupBox1.Enabled;
             optionSelectionGroupBox3.Enabled = optionSelectionGroupBox1.Enabled;
             optionSelectionGroupBox4.Enabled = optionSelectionGroupBox1.Enabled;
+            optionSelectionGroupBox5.Enabled = optionSelectionGroupBox1.Enabled;
             positionGroupBox.Enabled = optionSelectionGroupBox1.Enabled;
             resultGroupBox.Enabled = optionSelectionGroupBox1.Enabled;
             graphButton.Enabled = optionSelectionGroupBox1.Enabled;
@@ -970,6 +991,14 @@ namespace OptionsOracle.Forms
             optionPainButton.Enabled = optionSelectionGroupBox1.Enabled;
             printButton.Enabled = optionSelectionGroupBox1.Enabled;
             analysisButton.Enabled = optionSelectionGroupBox1.Enabled;
+
+            //update strike combo box
+            strikeComboBox.DisplayMember = null;
+            strikeComboBox.ValueMember = null;
+            strikeComboBox.DataSource = null;
+            strikeComboBox.DataSource = core.StrikeTable;
+            strikeComboBox.DisplayMember = "StrikeString";
+            strikeComboBox.ValueMember = "Strike";
 
             // update view filters
             filtersCheckBox_CheckedChanged(expRadioButtonAll, null);
@@ -2154,6 +2183,7 @@ namespace OptionsOracle.Forms
             optionSelectionGroupBox2.Enabled = optionSelectionGroupBox1.Enabled;
             optionSelectionGroupBox3.Enabled = optionSelectionGroupBox1.Enabled;
             optionSelectionGroupBox4.Enabled = optionSelectionGroupBox1.Enabled;
+            optionSelectionGroupBox5.Enabled = optionSelectionGroupBox1.Enabled;
             positionGroupBox.Enabled = optionSelectionGroupBox1.Enabled;
             resultGroupBox.Enabled = optionSelectionGroupBox1.Enabled;
             graphButton.Enabled = optionSelectionGroupBox1.Enabled;

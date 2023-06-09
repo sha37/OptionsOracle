@@ -42,7 +42,8 @@ namespace OptionsOracle
         public const int MAX_OPTIONS_INDICATORS = 2;
 
         // default configuration values
-        public const string DEFAULT_ONLINE_SERVER = @"PlugIn Server US (CBOE)";
+        public const string DEFAULT_ONLINE_SERVER = @"PlugIn Server Inida (NSE)";
+        public const string DEFAULT_STOCK_LIST = @"NSEStockList.json";
         public const string DEFAULT_AUTO_REFRESH = @"30";
         public const string DEFAULT_FEDERAL_INTEREST_AUTO_UPDATE = @"Enabled";
         public const string DEFAULT_VOLATILITY_MODE = @"Option IV";

@@ -16,11 +16,15 @@ and find optimal trading strategies.
 
 ## Getting Started
 
-## What's New in Option Oracle v1.7.0? (latest)
+## What's New in Option Oracle v1.7.1? (latest)
+	
+	-Implemented strike combo box to filter the option grid view.
+	-Alter position and size of various attributes to get better view experience.
 
-    -Removed extra side banners for a more streamlined and spacious viewing experience.
-    -Unified our XML structures to improve data management efficiency.
-    -Enhanced the loading form to make data loading smoother and quicker.
+##v1.7.0
+-Removed extra side banners for a more streamlined and spacious viewing experience.
+-Unified our XML structures to improve data management efficiency.
+-Enhanced the loading form to make data loading smoother and quicker.
 
 ##v1.0.8
 -Implemented GetHistoricalData for NSE (National Stock Exchange) using Yahoo Finance.

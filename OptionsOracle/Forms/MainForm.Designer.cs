@@ -166,6 +166,7 @@ namespace OptionsOracle.Forms
             this.atmCheckBox = new System.Windows.Forms.CheckBox();
             this.otmCheckBox = new System.Windows.Forms.CheckBox();
             this.grkCheckBox = new System.Windows.Forms.CheckBox();
+            this.strikeComboBox = new System.Windows.Forms.ComboBox();
             this.graphWorker = new System.ComponentModel.BackgroundWorker();
             this.optionsDataGridView = new System.Windows.Forms.DataGridView();
             this.optionsTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,6 +191,8 @@ namespace OptionsOracle.Forms
             this.optionsStdDevColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionsIndicator1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionsIndicator2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Change_OI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OptionStrategy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionsTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockLabel = new System.Windows.Forms.Label();
             this.lastPriceText = new System.Windows.Forms.TextBox();
@@ -220,6 +223,7 @@ namespace OptionsOracle.Forms
             this.impHisLabel = new System.Windows.Forms.Label();
             this.impVolatilityText = new System.Windows.Forms.TextBox();
             this.optionSelectionGroupBox4 = new System.Windows.Forms.GroupBox();
+            this.optionSelectionGroupBox5 = new System.Windows.Forms.GroupBox();
             this.stockGroupBox = new System.Windows.Forms.GroupBox();
             this.askText = new System.Windows.Forms.TextBox();
             this.hisVolatilityText = new System.Windows.Forms.TextBox();
@@ -233,8 +237,6 @@ namespace OptionsOracle.Forms
             this.quotesTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.opoOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.opoSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.Change_OI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OptionStrategy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endMonthUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startMonthUpDown)).BeginInit();
@@ -256,6 +258,7 @@ namespace OptionsOracle.Forms
             this.optionSelectionGroupBox3.SuspendLayout();
             this.optionSelectionGroupBox2.SuspendLayout();
             this.optionSelectionGroupBox4.SuspendLayout();
+            this.optionSelectionGroupBox5.SuspendLayout();
             this.stockGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topSplitContainer)).BeginInit();
             this.topSplitContainer.Panel1.SuspendLayout();
@@ -308,7 +311,7 @@ namespace OptionsOracle.Forms
             this.positionGroupBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionGroupBox.Location = new System.Drawing.Point(0, 2);
             this.positionGroupBox.Name = "positionGroupBox";
-            this.positionGroupBox.Size = new System.Drawing.Size(1023, 3241);
+            this.positionGroupBox.Size = new System.Drawing.Size(1023, 3243);
             this.positionGroupBox.TabIndex = 0;
             this.positionGroupBox.TabStop = false;
             this.positionGroupBox.Text = "Strategy Positions";
@@ -316,7 +319,7 @@ namespace OptionsOracle.Forms
             // designerButton
             // 
             this.designerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.designerButton.Location = new System.Drawing.Point(301, 255);
+            this.designerButton.Location = new System.Drawing.Point(301, 257);
             this.designerButton.Name = "designerButton";
             this.designerButton.Size = new System.Drawing.Size(88, 24);
             this.designerButton.TabIndex = 36;
@@ -328,7 +331,7 @@ namespace OptionsOracle.Forms
             // templateButton
             // 
             this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.templateButton.Location = new System.Drawing.Point(101, 256);
+            this.templateButton.Location = new System.Drawing.Point(101, 258);
             this.templateButton.Name = "templateButton";
             this.templateButton.Size = new System.Drawing.Size(88, 24);
             this.templateButton.TabIndex = 19;
@@ -339,7 +342,7 @@ namespace OptionsOracle.Forms
             // endMonthUpDown
             // 
             this.endMonthUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.endMonthUpDown.Location = new System.Drawing.Point(645, 255);
+            this.endMonthUpDown.Location = new System.Drawing.Point(645, 257);
             this.endMonthUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -359,7 +362,7 @@ namespace OptionsOracle.Forms
             // startMonthUpDown
             // 
             this.startMonthUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startMonthUpDown.Location = new System.Drawing.Point(645, 232);
+            this.startMonthUpDown.Location = new System.Drawing.Point(645, 234);
             this.startMonthUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -379,7 +382,7 @@ namespace OptionsOracle.Forms
             // endDayUpDown
             // 
             this.endDayUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.endDayUpDown.Location = new System.Drawing.Point(628, 255);
+            this.endDayUpDown.Location = new System.Drawing.Point(628, 257);
             this.endDayUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -399,7 +402,7 @@ namespace OptionsOracle.Forms
             // startDayUpDown
             // 
             this.startDayUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startDayUpDown.Location = new System.Drawing.Point(628, 232);
+            this.startDayUpDown.Location = new System.Drawing.Point(628, 234);
             this.startDayUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -423,7 +426,7 @@ namespace OptionsOracle.Forms
             this.endDateTextBox.ContextMenuStrip = this.unfreezeContextMenu;
             this.endDateTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.endDateTextBox.Location = new System.Drawing.Point(548, 255);
+            this.endDateTextBox.Location = new System.Drawing.Point(548, 257);
             this.endDateTextBox.Name = "endDateTextBox";
             this.endDateTextBox.ReadOnly = true;
             this.endDateTextBox.Size = new System.Drawing.Size(79, 20);
@@ -454,7 +457,7 @@ namespace OptionsOracle.Forms
             this.startDateTextBox.ContextMenuStrip = this.unfreezeContextMenu;
             this.startDateTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.startDateTextBox.Location = new System.Drawing.Point(548, 232);
+            this.startDateTextBox.Location = new System.Drawing.Point(548, 234);
             this.startDateTextBox.Name = "startDateTextBox";
             this.startDateTextBox.ReadOnly = true;
             this.startDateTextBox.Size = new System.Drawing.Size(79, 20);
@@ -467,7 +470,7 @@ namespace OptionsOracle.Forms
             // 
             this.endDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Location = new System.Drawing.Point(491, 258);
+            this.endDateLabel.Location = new System.Drawing.Point(491, 260);
             this.endDateLabel.Name = "endDateLabel";
             this.endDateLabel.Size = new System.Drawing.Size(50, 14);
             this.endDateLabel.TabIndex = 0;
@@ -476,7 +479,7 @@ namespace OptionsOracle.Forms
             // startDateLabel
             // 
             this.startDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startDateLabel.Location = new System.Drawing.Point(491, 235);
+            this.startDateLabel.Location = new System.Drawing.Point(491, 237);
             this.startDateLabel.Name = "startDateLabel";
             this.startDateLabel.Size = new System.Drawing.Size(55, 14);
             this.startDateLabel.TabIndex = 0;
@@ -486,7 +489,7 @@ namespace OptionsOracle.Forms
             // 
             this.addRowbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addRowbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addRowbutton.Location = new System.Drawing.Point(101, 228);
+            this.addRowbutton.Location = new System.Drawing.Point(101, 230);
             this.addRowbutton.Name = "addRowbutton";
             this.addRowbutton.Size = new System.Drawing.Size(88, 24);
             this.addRowbutton.TabIndex = 22;
@@ -498,7 +501,7 @@ namespace OptionsOracle.Forms
             // 
             this.deleteRowbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteRowbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteRowbutton.Location = new System.Drawing.Point(12, 228);
+            this.deleteRowbutton.Location = new System.Drawing.Point(12, 230);
             this.deleteRowbutton.Name = "deleteRowbutton";
             this.deleteRowbutton.Size = new System.Drawing.Size(88, 24);
             this.deleteRowbutton.TabIndex = 21;
@@ -510,7 +513,7 @@ namespace OptionsOracle.Forms
             // 
             this.clearPositionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.clearPositionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clearPositionButton.Location = new System.Drawing.Point(12, 255);
+            this.clearPositionButton.Location = new System.Drawing.Point(12, 257);
             this.clearPositionButton.Name = "clearPositionButton";
             this.clearPositionButton.Size = new System.Drawing.Size(88, 24);
             this.clearPositionButton.TabIndex = 20;
@@ -568,7 +571,7 @@ namespace OptionsOracle.Forms
             this.strategyDataGridView.RowTemplate.DefaultCellStyle.NullValue = "N/A";
             this.strategyDataGridView.RowTemplate.Height = 20;
             this.strategyDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.strategyDataGridView.Size = new System.Drawing.Size(998, 200);
+            this.strategyDataGridView.Size = new System.Drawing.Size(998, 202);
             this.strategyDataGridView.TabIndex = 18;
             this.strategyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.strategyDataGridView_CellClick);
             this.strategyDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.strategyDataGridView_CellContentClick);
@@ -605,7 +608,7 @@ namespace OptionsOracle.Forms
             this.positionsEnableColumn.HeaderText = "X";
             this.positionsEnableColumn.MinimumWidth = 24;
             this.positionsEnableColumn.Name = "positionsEnableColumn";
-            this.positionsEnableColumn.Width = 20;
+            this.positionsEnableColumn.Width = 24;
             // 
             // positionsIdColumn
             // 
@@ -889,7 +892,7 @@ namespace OptionsOracle.Forms
             this.endDateTimePicker.CustomFormat = "d-MMM-yyyy";
             this.endDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.globalTableBindingSource, "EndDate", true));
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(548, 255);
+            this.endDateTimePicker.Location = new System.Drawing.Point(548, 257);
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(79, 20);
             this.endDateTimePicker.TabIndex = 26;
@@ -912,7 +915,7 @@ namespace OptionsOracle.Forms
             this.startDateTimePicker.CustomFormat = "d-MMM-yyyy";
             this.startDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.globalTableBindingSource, "StartDate", true));
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(548, 232);
+            this.startDateTimePicker.Location = new System.Drawing.Point(548, 234);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(79, 20);
             this.startDateTimePicker.TabIndex = 25;
@@ -923,10 +926,10 @@ namespace OptionsOracle.Forms
             // 
             this.notesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTextBox.BackColor = System.Drawing.Color.Black; 
-            this.notesTextBox.Font = new System.Drawing.Font("Arial", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            this.notesTextBox.BackColor = System.Drawing.Color.Black;
+            this.notesTextBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.notesTextBox.Location = new System.Drawing.Point(669, 231);
+            this.notesTextBox.Location = new System.Drawing.Point(669, 233);
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -954,7 +957,7 @@ namespace OptionsOracle.Forms
             this.resultGroupBox.Controls.Add(this.resultsDataGridView);
             this.resultGroupBox.Location = new System.Drawing.Point(290, 2);
             this.resultGroupBox.Name = "resultGroupBox";
-            this.resultGroupBox.Size = new System.Drawing.Size(885, 433);
+            this.resultGroupBox.Size = new System.Drawing.Size(885, 443);
             this.resultGroupBox.TabIndex = 0;
             this.resultGroupBox.TabStop = false;
             this.resultGroupBox.Text = "Strategy Summary";
@@ -993,7 +996,7 @@ namespace OptionsOracle.Forms
             this.resultsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.resultsDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultsDataGridView.RowTemplate.Height = 20;
-            this.resultsDataGridView.Size = new System.Drawing.Size(559, 237);
+            this.resultsDataGridView.Size = new System.Drawing.Size(559, 247);
             this.resultsDataGridView.TabIndex = 40;
             this.resultsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.resultsDataGridView_CellFormatting);
             this.resultsDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataGridView_CellValueChanged);
@@ -1137,7 +1140,7 @@ namespace OptionsOracle.Forms
             this.controlGroupBox.Controls.Add(this.titlePanelWebBrowser);
             this.controlGroupBox.Location = new System.Drawing.Point(0, 0);
             this.controlGroupBox.Name = "controlGroupBox";
-            this.controlGroupBox.Size = new System.Drawing.Size(284, 383);
+            this.controlGroupBox.Size = new System.Drawing.Size(284, 393);
             this.controlGroupBox.TabIndex = 0;
             this.controlGroupBox.TabStop = false;
             // 
@@ -1210,7 +1213,6 @@ namespace OptionsOracle.Forms
             // 
             // aboutButton
             // 
-            this.aboutButton.Enabled = true;
             this.aboutButton.Location = new System.Drawing.Point(101, 195);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(88, 24);
@@ -1415,6 +1417,15 @@ namespace OptionsOracle.Forms
             this.grkCheckBox.UseVisualStyleBackColor = true;
             this.grkCheckBox.CheckedChanged += new System.EventHandler(this.grkCheckBox_CheckedChanged);
             // 
+            // strikeComboBox
+            // 
+            this.strikeComboBox.FormattingEnabled = true;
+            this.strikeComboBox.Location = new System.Drawing.Point(4, 9);
+            this.strikeComboBox.Name = "strikeComboBox";
+            this.strikeComboBox.Size = new System.Drawing.Size(85, 21);
+            this.strikeComboBox.TabIndex = 10;
+            this.strikeComboBox.SelectedValueChanged += new System.EventHandler(this.filtersCheckBox_CheckedChanged);
+            // 
             // graphWorker
             // 
             this.graphWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.graphWorker_DoWork);
@@ -1475,7 +1486,7 @@ namespace OptionsOracle.Forms
             this.optionsDataGridView.RowTemplate.Height = 20;
             this.optionsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.optionsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.optionsDataGridView.Size = new System.Drawing.Size(684, 143);
+            this.optionsDataGridView.Size = new System.Drawing.Size(838, 149);
             this.optionsDataGridView.TabIndex = 3;
             this.optionsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.optionsDataGridView_CellFormatting);
             this.optionsDataGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.optionsDataGridView_MouseDown);
@@ -1730,6 +1741,20 @@ namespace OptionsOracle.Forms
             this.optionsIndicator2Column.Visible = false;
             this.optionsIndicator2Column.Width = 60;
             // 
+            // Change_OI
+            // 
+            this.Change_OI.DataPropertyName = "Change_OI";
+            this.Change_OI.HeaderText = "Change_OI";
+            this.Change_OI.Name = "Change_OI";
+            this.Change_OI.ReadOnly = true;
+            // 
+            // OptionStrategy
+            // 
+            this.OptionStrategy.DataPropertyName = "OptionStrategy";
+            this.OptionStrategy.HeaderText = "OptionStrategy";
+            this.OptionStrategy.Name = "OptionStrategy";
+            this.OptionStrategy.ReadOnly = true;
+            // 
             // optionsTableBindingSource
             // 
             this.optionsTableBindingSource.DataMember = "OptionsTable";
@@ -1914,9 +1939,9 @@ namespace OptionsOracle.Forms
             this.optionSelectionGroupBox3.Controls.Add(this.expRadioButtonAll);
             this.optionSelectionGroupBox3.Enabled = false;
             this.optionSelectionGroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.optionSelectionGroupBox3.Location = new System.Drawing.Point(460, 10);
+            this.optionSelectionGroupBox3.Location = new System.Drawing.Point(555, 10);
             this.optionSelectionGroupBox3.Name = "optionSelectionGroupBox3";
-            this.optionSelectionGroupBox3.Size = new System.Drawing.Size(398, 34);
+            this.optionSelectionGroupBox3.Size = new System.Drawing.Size(452, 34);
             this.optionSelectionGroupBox3.TabIndex = 0;
             this.optionSelectionGroupBox3.TabStop = false;
             // 
@@ -2288,12 +2313,23 @@ namespace OptionsOracle.Forms
             this.optionSelectionGroupBox4.TabIndex = 0;
             this.optionSelectionGroupBox4.TabStop = false;
             // 
+            // optionSelectionGroupBox5
+            // 
+            this.optionSelectionGroupBox5.Controls.Add(this.strikeComboBox);
+            this.optionSelectionGroupBox5.Enabled = false;
+            this.optionSelectionGroupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionSelectionGroupBox5.Location = new System.Drawing.Point(460, 10);
+            this.optionSelectionGroupBox5.Name = "optionSelectionGroupBox5";
+            this.optionSelectionGroupBox5.Size = new System.Drawing.Size(93, 34);
+            this.optionSelectionGroupBox5.TabIndex = 0;
+            this.optionSelectionGroupBox5.TabStop = false;
+            // 
             // stockGroupBox
             // 
-            this.stockGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stockGroupBox.Controls.Add(this.optionSelectionGroupBox4);
             this.stockGroupBox.Controls.Add(this.askText);
             this.stockGroupBox.Controls.Add(this.hisVolatilityText);
-            this.stockGroupBox.Controls.Add(this.optionSelectionGroupBox4);
+            this.stockGroupBox.Controls.Add(this.optionSelectionGroupBox5);
             this.stockGroupBox.Controls.Add(this.impVolatilityText);
             this.stockGroupBox.Controls.Add(this.impHisLabel);
             this.stockGroupBox.Controls.Add(this.optionSelectionGroupBox2);
@@ -2317,9 +2353,10 @@ namespace OptionsOracle.Forms
             this.stockGroupBox.Controls.Add(this.downloadLabel);
             this.stockGroupBox.Controls.Add(this.progressLabel);
             this.stockGroupBox.Controls.Add(this.serverProgressBar);
-            this.stockGroupBox.Location = new System.Drawing.Point(0, 2);
+            this.stockGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stockGroupBox.Location = new System.Drawing.Point(0, 0);
             this.stockGroupBox.Name = "stockGroupBox";
-            this.stockGroupBox.Size = new System.Drawing.Size(869, 205);
+            this.stockGroupBox.Size = new System.Drawing.Size(1023, 211);
             this.stockGroupBox.TabIndex = 0;
             this.stockGroupBox.TabStop = false;
             this.stockGroupBox.Text = "Underlying Data";
@@ -2383,8 +2420,8 @@ namespace OptionsOracle.Forms
             // 
             // topSplitContainer
             // 
-            this.topSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill; 
-            this.topSplitContainer.Location = new System.Drawing.Point(4, 0);
+            this.topSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topSplitContainer.Location = new System.Drawing.Point(0, 0);
             this.topSplitContainer.Name = "topSplitContainer";
             this.topSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -2417,8 +2454,8 @@ namespace OptionsOracle.Forms
             // 
             this.bottomSplitContainer.Panel2.Controls.Add(this.resultGroupBox);
             this.bottomSplitContainer.Panel2.Controls.Add(this.controlGroupBox);
-            this.bottomSplitContainer.Size = new System.Drawing.Size(1023, 677);
-            this.bottomSplitContainer.SplitterDistance = 287;
+            this.bottomSplitContainer.Size = new System.Drawing.Size(1023, 683);
+            this.bottomSplitContainer.SplitterDistance = 289;
             this.bottomSplitContainer.SplitterWidth = 1;
             this.bottomSplitContainer.TabIndex = 0;
             // 
@@ -2446,20 +2483,6 @@ namespace OptionsOracle.Forms
             this.opoSaveFileDialog.Filter = "opo files (*.opo)|*.opo|excel xml (*.xml)|*.xml|All files (*.*)|*.*";
             this.opoSaveFileDialog.InitialDirectory = global::OptionsOracle.Properties.Settings.Default.opoPath;
             // 
-            // Change_OI
-            // 
-            this.Change_OI.DataPropertyName = "Change_OI";
-            this.Change_OI.HeaderText = "Change_OI";
-            this.Change_OI.Name = "Change_OI";
-            this.Change_OI.ReadOnly = true;
-            // 
-            // OptionStrategy
-            // 
-            this.OptionStrategy.DataPropertyName = "OptionStrategy";
-            this.OptionStrategy.HeaderText = "OptionStrategy";
-            this.OptionStrategy.Name = "OptionStrategy";
-            this.OptionStrategy.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2473,7 +2496,7 @@ namespace OptionsOracle.Forms
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1036, 745);
             this.Name = "MainForm";
-            base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "OptionsOracle";
             this.Text = "OptionsOracle";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -2502,6 +2525,7 @@ namespace OptionsOracle.Forms
             this.optionSelectionGroupBox3.ResumeLayout(false);
             this.optionSelectionGroupBox2.ResumeLayout(false);
             this.optionSelectionGroupBox4.ResumeLayout(false);
+            this.optionSelectionGroupBox5.ResumeLayout(false);
             this.stockGroupBox.ResumeLayout(false);
             this.stockGroupBox.PerformLayout();
             this.topSplitContainer.Panel1.ResumeLayout(false);
@@ -2618,8 +2642,10 @@ namespace OptionsOracle.Forms
         private System.Windows.Forms.Label impHisLabel;
         private System.Windows.Forms.TextBox impVolatilityText;
         private System.Windows.Forms.GroupBox optionSelectionGroupBox4;
+        private System.Windows.Forms.GroupBox optionSelectionGroupBox5;
         private System.Windows.Forms.CheckBox grkCheckBox;
         private System.Windows.Forms.GroupBox stockGroupBox;
+        private System.Windows.Forms.ComboBox strikeComboBox;
         private System.Windows.Forms.Label downloadLabel;
         private System.Windows.Forms.ProgressBar serverProgressBar;
         private System.Windows.Forms.Label progressLabel;
