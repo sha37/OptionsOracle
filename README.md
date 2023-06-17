@@ -16,10 +16,24 @@ and find optimal trading strategies.
 
 ## Getting Started
 
-## What's New in Option Oracle v1.7.1? (latest)
-	
-	-Implemented strike combo box to filter the option grid view.
-	-Alter position and size of various attributes to get better view experience.
+# OptionsOracle v1.7.2(Latest)
+
+## What's New?
+
+### Dynamic Stock List Appending
+
+We have made a significant upgrade to the handling of our stock lists. Now, the stock list is dynamically appended to the stock text depending on the plugin and its resources. This feature has currently been implemented for NSE (National Stock Exchange) only, but we are looking to expand it to other exchanges in future updates.
+
+### NSE Stock Template
+
+We've introduced a new stock template in JSON format for NSE. This will make it easier for users to work with NSE stocks and will provide a more standardized format for our stock data.
+
+## Previous Updates:
+
+
+##v1.7.1	
+-Implemented strike combo box to filter the option grid view.
+-Alter position and size of various attributes to get better view experience.
 
 ##v1.7.0
 -Removed extra side banners for a more streamlined and spacious viewing experience.

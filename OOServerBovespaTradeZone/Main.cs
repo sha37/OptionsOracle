@@ -653,5 +653,10 @@ namespace OOServerBovespaTradeZone
         public void SetParameterList(string name, ArrayList value)
         {
         }
+
+        public List<string> GetAllStockList()
+        {
+            return null;
+        }
     }
 }

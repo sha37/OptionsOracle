@@ -49,4 +49,17 @@ namespace OOServerNSE
             public List<double> adjclose { get; set; }
         }
 
+        public class StockList
+        {
+            public string Name { get; set; }
+            public string Symbol { get; set; }
+            public string LotSize { get; set; }
+        }
+
+        public class Root
+        {
+            public string Exchange { get; set; }
+            public string Version { get; set; }
+            public List<StockList> StockLists { get; set; }
+        }
 }

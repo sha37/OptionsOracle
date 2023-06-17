@@ -311,7 +311,7 @@ namespace OptionsOracle.Forms
             this.positionGroupBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionGroupBox.Location = new System.Drawing.Point(0, 2);
             this.positionGroupBox.Name = "positionGroupBox";
-            this.positionGroupBox.Size = new System.Drawing.Size(1023, 3243);
+            this.positionGroupBox.Size = new System.Drawing.Size(1023, 3244);
             this.positionGroupBox.TabIndex = 0;
             this.positionGroupBox.TabStop = false;
             this.positionGroupBox.Text = "Strategy Positions";
@@ -319,7 +319,7 @@ namespace OptionsOracle.Forms
             // designerButton
             // 
             this.designerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.designerButton.Location = new System.Drawing.Point(301, 257);
+            this.designerButton.Location = new System.Drawing.Point(301, 258);
             this.designerButton.Name = "designerButton";
             this.designerButton.Size = new System.Drawing.Size(88, 24);
             this.designerButton.TabIndex = 36;
@@ -331,7 +331,7 @@ namespace OptionsOracle.Forms
             // templateButton
             // 
             this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.templateButton.Location = new System.Drawing.Point(101, 258);
+            this.templateButton.Location = new System.Drawing.Point(101, 259);
             this.templateButton.Name = "templateButton";
             this.templateButton.Size = new System.Drawing.Size(88, 24);
             this.templateButton.TabIndex = 19;
@@ -342,7 +342,7 @@ namespace OptionsOracle.Forms
             // endMonthUpDown
             // 
             this.endMonthUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.endMonthUpDown.Location = new System.Drawing.Point(645, 257);
+            this.endMonthUpDown.Location = new System.Drawing.Point(645, 258);
             this.endMonthUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -362,7 +362,7 @@ namespace OptionsOracle.Forms
             // startMonthUpDown
             // 
             this.startMonthUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startMonthUpDown.Location = new System.Drawing.Point(645, 234);
+            this.startMonthUpDown.Location = new System.Drawing.Point(645, 235);
             this.startMonthUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -382,7 +382,7 @@ namespace OptionsOracle.Forms
             // endDayUpDown
             // 
             this.endDayUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.endDayUpDown.Location = new System.Drawing.Point(628, 257);
+            this.endDayUpDown.Location = new System.Drawing.Point(628, 258);
             this.endDayUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -402,7 +402,7 @@ namespace OptionsOracle.Forms
             // startDayUpDown
             // 
             this.startDayUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startDayUpDown.Location = new System.Drawing.Point(628, 234);
+            this.startDayUpDown.Location = new System.Drawing.Point(628, 235);
             this.startDayUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -426,7 +426,7 @@ namespace OptionsOracle.Forms
             this.endDateTextBox.ContextMenuStrip = this.unfreezeContextMenu;
             this.endDateTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.endDateTextBox.Location = new System.Drawing.Point(548, 257);
+            this.endDateTextBox.Location = new System.Drawing.Point(548, 258);
             this.endDateTextBox.Name = "endDateTextBox";
             this.endDateTextBox.ReadOnly = true;
             this.endDateTextBox.Size = new System.Drawing.Size(79, 20);
@@ -457,7 +457,7 @@ namespace OptionsOracle.Forms
             this.startDateTextBox.ContextMenuStrip = this.unfreezeContextMenu;
             this.startDateTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.startDateTextBox.Location = new System.Drawing.Point(548, 234);
+            this.startDateTextBox.Location = new System.Drawing.Point(548, 235);
             this.startDateTextBox.Name = "startDateTextBox";
             this.startDateTextBox.ReadOnly = true;
             this.startDateTextBox.Size = new System.Drawing.Size(79, 20);
@@ -470,7 +470,7 @@ namespace OptionsOracle.Forms
             // 
             this.endDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Location = new System.Drawing.Point(491, 260);
+            this.endDateLabel.Location = new System.Drawing.Point(491, 261);
             this.endDateLabel.Name = "endDateLabel";
             this.endDateLabel.Size = new System.Drawing.Size(50, 14);
             this.endDateLabel.TabIndex = 0;
@@ -479,7 +479,7 @@ namespace OptionsOracle.Forms
             // startDateLabel
             // 
             this.startDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startDateLabel.Location = new System.Drawing.Point(491, 237);
+            this.startDateLabel.Location = new System.Drawing.Point(491, 238);
             this.startDateLabel.Name = "startDateLabel";
             this.startDateLabel.Size = new System.Drawing.Size(55, 14);
             this.startDateLabel.TabIndex = 0;
@@ -489,7 +489,7 @@ namespace OptionsOracle.Forms
             // 
             this.addRowbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addRowbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addRowbutton.Location = new System.Drawing.Point(101, 230);
+            this.addRowbutton.Location = new System.Drawing.Point(101, 231);
             this.addRowbutton.Name = "addRowbutton";
             this.addRowbutton.Size = new System.Drawing.Size(88, 24);
             this.addRowbutton.TabIndex = 22;
@@ -501,7 +501,7 @@ namespace OptionsOracle.Forms
             // 
             this.deleteRowbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteRowbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteRowbutton.Location = new System.Drawing.Point(12, 230);
+            this.deleteRowbutton.Location = new System.Drawing.Point(12, 231);
             this.deleteRowbutton.Name = "deleteRowbutton";
             this.deleteRowbutton.Size = new System.Drawing.Size(88, 24);
             this.deleteRowbutton.TabIndex = 21;
@@ -513,7 +513,7 @@ namespace OptionsOracle.Forms
             // 
             this.clearPositionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.clearPositionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clearPositionButton.Location = new System.Drawing.Point(12, 257);
+            this.clearPositionButton.Location = new System.Drawing.Point(12, 258);
             this.clearPositionButton.Name = "clearPositionButton";
             this.clearPositionButton.Size = new System.Drawing.Size(88, 24);
             this.clearPositionButton.TabIndex = 20;
@@ -571,7 +571,7 @@ namespace OptionsOracle.Forms
             this.strategyDataGridView.RowTemplate.DefaultCellStyle.NullValue = "N/A";
             this.strategyDataGridView.RowTemplate.Height = 20;
             this.strategyDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.strategyDataGridView.Size = new System.Drawing.Size(998, 202);
+            this.strategyDataGridView.Size = new System.Drawing.Size(998, 203);
             this.strategyDataGridView.TabIndex = 18;
             this.strategyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.strategyDataGridView_CellClick);
             this.strategyDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.strategyDataGridView_CellContentClick);
@@ -892,7 +892,7 @@ namespace OptionsOracle.Forms
             this.endDateTimePicker.CustomFormat = "d-MMM-yyyy";
             this.endDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.globalTableBindingSource, "EndDate", true));
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(548, 257);
+            this.endDateTimePicker.Location = new System.Drawing.Point(548, 258);
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(79, 20);
             this.endDateTimePicker.TabIndex = 26;
@@ -915,7 +915,7 @@ namespace OptionsOracle.Forms
             this.startDateTimePicker.CustomFormat = "d-MMM-yyyy";
             this.startDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.globalTableBindingSource, "StartDate", true));
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(548, 234);
+            this.startDateTimePicker.Location = new System.Drawing.Point(548, 235);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(79, 20);
             this.startDateTimePicker.TabIndex = 25;
@@ -929,7 +929,7 @@ namespace OptionsOracle.Forms
             this.notesTextBox.BackColor = System.Drawing.Color.Black;
             this.notesTextBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesTextBox.ForeColor = System.Drawing.Color.Cornsilk;
-            this.notesTextBox.Location = new System.Drawing.Point(669, 233);
+            this.notesTextBox.Location = new System.Drawing.Point(669, 234);
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
             this.notesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -957,7 +957,7 @@ namespace OptionsOracle.Forms
             this.resultGroupBox.Controls.Add(this.resultsDataGridView);
             this.resultGroupBox.Location = new System.Drawing.Point(290, 2);
             this.resultGroupBox.Name = "resultGroupBox";
-            this.resultGroupBox.Size = new System.Drawing.Size(885, 443);
+            this.resultGroupBox.Size = new System.Drawing.Size(885, 448);
             this.resultGroupBox.TabIndex = 0;
             this.resultGroupBox.TabStop = false;
             this.resultGroupBox.Text = "Strategy Summary";
@@ -996,7 +996,7 @@ namespace OptionsOracle.Forms
             this.resultsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.resultsDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultsDataGridView.RowTemplate.Height = 20;
-            this.resultsDataGridView.Size = new System.Drawing.Size(559, 247);
+            this.resultsDataGridView.Size = new System.Drawing.Size(559, 252);
             this.resultsDataGridView.TabIndex = 40;
             this.resultsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.resultsDataGridView_CellFormatting);
             this.resultsDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataGridView_CellValueChanged);
@@ -1140,7 +1140,7 @@ namespace OptionsOracle.Forms
             this.controlGroupBox.Controls.Add(this.titlePanelWebBrowser);
             this.controlGroupBox.Location = new System.Drawing.Point(0, 0);
             this.controlGroupBox.Name = "controlGroupBox";
-            this.controlGroupBox.Size = new System.Drawing.Size(284, 393);
+            this.controlGroupBox.Size = new System.Drawing.Size(284, 398);
             this.controlGroupBox.TabIndex = 0;
             this.controlGroupBox.TabStop = false;
             // 
@@ -2038,206 +2038,6 @@ namespace OptionsOracle.Forms
             // 
             // stockText
             // 
-            this.stockText.AutoCompleteCustomSource.AddRange(new string[] {
-            "ACC",
-            "ADANIENT",
-            "ADANIPORTS",
-            "ADANIPOWER",
-            "AJANTPHARM",
-            "ALBK",
-            "AMARAJABAT",
-            "AMBUJACEM",
-            "APOLLOHOSP",
-            "APOLLOTYRE",
-            "ARVIND",
-            "ASHOKLEY",
-            "ASIANPAINT",
-            "AUROPHARMA",
-            "AXISBANK",
-            "BAJAJ-AUTO",
-            "BAJAJFINSV",
-            "BAJFINANCE",
-            "BALKRISIND",
-            "BANKBARODA",
-            "BANKINDIA",
-            "BANKNIFTY",
-            "BATAINDIA",
-            "BEL",
-            "BEML",
-            "BERGEPAINT",
-            "BHARATFIN",
-            "BHARATFORG",
-            "BHARTIARTL",
-            "BHEL",
-            "BIOCON",
-            "BOSCHLTD",
-            "BPCL",
-            "BRITANNIA",
-            "BSOFT",
-            "CADILAHC",
-            "CANBK",
-            "CANFINHOME",
-            "CASTROLIND",
-            "CEATLTD",
-            "CENTURYTEX",
-            "CESC",
-            "CGPOWER",
-            "CHENNPETRO",
-            "CHOLAFIN",
-            "CIPLA",
-            "COALINDIA",
-            "COLPAL",
-            "CONCOR",
-            "CUMMINSIND",
-            "DABUR",
-            "DCBBANK",
-            "DHFL",
-            "DISHTV",
-            "DIVISLAB",
-            "DLF",
-            "DRREDDY",
-            "EICHERMOT",
-            "ENGINERSIN",
-            "EQUITAS",
-            "ESCORTS",
-            "EXIDEIND",
-            "FEDERALBNK",
-            "GAIL",
-            "GLENMARK",
-            "GMRINFRA",
-            "GODFRYPHLP",
-            "GODREJCP",
-            "GODREJIND",
-            "GRASIM",
-            "GSFC",
-            "HAVELLS",
-            "HCLTECH",
-            "HDFC",
-            "HDFCBANK",
-            "HEROMOTOCO",
-            "HEXAWARE",
-            "HINDALCO",
-            "HINDPETRO",
-            "HINDUNILVR",
-            "HINDZINC",
-            "IBULHSGFIN",
-            "ICICIBANK",
-            "ICICIPRULI",
-            "IDBI",
-            "IDEA",
-            "IDFC",
-            "IDFCFIRSTB",
-            "IFCI",
-            "IGL",
-            "INDIACEM",
-            "INDIANB",
-            "INDIGO",
-            "INDUSINDBK",
-            "INFIBEAM",
-            "INFRATEL",
-            "INFY",
-            "IOC",
-            "IRB",
-            "ITC",
-            "JETAIRWAYS",
-            "JINDALSTEL",
-            "JISLJALEQS",
-            "JSWSTEEL",
-            "JUBLFOOD",
-            "JUSTDIAL",
-            "KAJARIACER",
-            "KOTAKBANK",
-            "KSCL",
-            "KTKBANK",
-            "L&TFH",
-            "LICHSGFIN",
-            "LT",
-            "LUPIN",
-            "M&M",
-            "M&MFIN",
-            "MANAPPURAM",
-            "MARICO",
-            "MARUTI",
-            "MCDOWELL-N",
-            "MCX",
-            "MFSL",
-            "MGL",
-            "MINDTREE",
-            "MOTHERSUMI",
-            "MRF",
-            "MRPL",
-            "MUTHOOTFIN",
-            "NATIONALUM",
-            "NBCC",
-            "NCC",
-            "NESTLEIND",
-            "NHPC",
-            "NIFTY",
-            "NIFTYIT",
-            "NIITTECH",
-            "NMDC",
-            "NTPC",
-            "OFSS",
-            "OIL",
-            "ONGC",
-            "ORIENTBANK",
-            "PAGEIND",
-            "PCJEWELLER",
-            "PEL",
-            "PETRONET",
-            "PFC",
-            "PIDILITIND",
-            "PNB",
-            "POWERGRID",
-            "PVR",
-            "RAMCOCEM",
-            "RAYMOND",
-            "RBLBANK",
-            "RECLTD",
-            "RELCAPITAL",
-            "RELIANCE",
-            "RELINFRA",
-            "REPCOHOME",
-            "RPOWER",
-            "SAIL",
-            "SBIN",
-            "SHREECEM",
-            "SIEMENS",
-            "SOUTHBANK",
-            "SRF",
-            "SRTRANSFIN",
-            "STAR",
-            "SUNPHARMA",
-            "SUNTV",
-            "SUZLON",
-            "SYNDIBANK",
-            "TATACHEM",
-            "TATACOMM",
-            "TATAELXSI",
-            "TATAGLOBAL",
-            "TATAMOTORS",
-            "TATAMTRDVR",
-            "TATAPOWER",
-            "TATASTEEL",
-            "TCS",
-            "TECHM",
-            "TITAN",
-            "TORNTPHARM",
-            "TORNTPOWER",
-            "TV18BRDCST",
-            "TVSMOTOR",
-            "UBL",
-            "UJJIVAN",
-            "ULTRACEMCO",
-            "UNIONBANK",
-            "UPL",
-            "VEDL",
-            "VGUARD",
-            "VOLTAS",
-            "WIPRO",
-            "WOCKPHARMA",
-            "YESBANK",
-            "ZEEL"});
             this.stockText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.stockText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.stockText.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -2454,8 +2254,8 @@ namespace OptionsOracle.Forms
             // 
             this.bottomSplitContainer.Panel2.Controls.Add(this.resultGroupBox);
             this.bottomSplitContainer.Panel2.Controls.Add(this.controlGroupBox);
-            this.bottomSplitContainer.Size = new System.Drawing.Size(1023, 683);
-            this.bottomSplitContainer.SplitterDistance = 289;
+            this.bottomSplitContainer.Size = new System.Drawing.Size(1023, 686);
+            this.bottomSplitContainer.SplitterDistance = 290;
             this.bottomSplitContainer.SplitterWidth = 1;
             this.bottomSplitContainer.TabIndex = 0;
             // 

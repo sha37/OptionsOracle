@@ -1,0 +1,990 @@
+{
+	"Exchange" :"NSE",
+	"Version": "1.0.0",
+	"StockLists": [{
+			"Name": "Nifty 50",
+			"Symbol": "NIFTY",
+			"LotSize": "50"
+		},
+		{
+			"Name": "Nifty Bank",
+			"Symbol": "BANKNIFTY",
+			"LotSize": "25"
+		},
+		{
+			"Name": "Nifty Financial",
+			"Symbol": "NIFTY FIN SERVICE",
+			"LotSize": "40"
+		},
+		{
+			"Name": "Aarti Industries Ltd",
+			"Symbol": "AARTIIND",
+			"LotSize": "850"
+		},
+		{
+			"Name": "Abb Ltd",
+			"Symbol": "ABB",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Abbott India Ltd",
+			"Symbol": "ABBOTINDIA",
+			"LotSize": "40"
+		},
+		{
+			"Name": "Acc Ltd",
+			"Symbol": "ACC",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Adani Enterprises Ltd",
+			"Symbol": "ADANIENT",
+			"LotSize": "500"
+		},
+		{
+			"Name": "Adani Ports Sez Ltd",
+			"Symbol": "ADANIPORTS",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Aditya Birla Capital Ltd",
+			"Symbol": "ABCAPITAL",
+			"LotSize": "5400"
+		},
+		{
+			"Name": "Aditya Birla Fashion Ltd",
+			"Symbol": "ABFRL",
+			"LotSize": "2600"
+		},
+		{
+			"Name": "Amara Raja Batteries Ltd",
+			"Symbol": "AMARAJABAT",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Ambuja Cements Ltd",
+			"Symbol": "AMBUJACEM",
+			"LotSize": "1800"
+		},
+		{
+			"Name": "Apollo Hospitals Ltd",
+			"Symbol": "APOLLOHOSP",
+			"LotSize": "125"
+		},
+		{
+			"Name": "Apollo Tyres Ltd",
+			"Symbol": "APOLLOTYRE",
+			"LotSize": "3500"
+		},
+		{
+			"Name": "Ashok Leyland Ltd",
+			"Symbol": "ASHOKLEY",
+			"LotSize": "5000"
+		},
+		{
+			"Name": "Asian Paints Ltd",
+			"Symbol": "ASIANPAINT",
+			"LotSize": "200"
+		},
+		{
+			"Name": "Astral Poly Technik Ltd",
+			"Symbol": "ASTRAL",
+			"LotSize": "275"
+		},
+		{
+			"Name": "Atul Ltd",
+			"Symbol": "ATUL",
+			"LotSize": "75"
+		},
+		{
+			"Name": "Aurobindo Pharma Ltd",
+			"Symbol": "AUROPHARMA",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Au Small Finance Bank Ltd",
+			"Symbol": "AUBANK",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Axis Bank Ltd",
+			"Symbol": "AXISBANK",
+			"LotSize": "1200"
+		},
+		{
+			"Name": "Bajaj Auto Ltd",
+			"Symbol": "BAJAJ-AUTO",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Bajaj Finance Ltd",
+			"Symbol": "BAJFINANCE",
+			"LotSize": "125"
+		},
+		{
+			"Name": "Bajaj Finserv Ltd",
+			"Symbol": "BAJAJFINSV",
+			"LotSize": "50"
+		},
+		{
+			"Name": "Balkrishna Industries Ltd",
+			"Symbol": "BALKRISIND",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Balrampur Chini Mills Ltd",
+			"Symbol": "BALRAMCHIN",
+			"LotSize": "1600"
+		},
+		{
+			"Name": "Bandhan Bank Ltd",
+			"Symbol": "BANDHANBNK",
+			"LotSize": "1800"
+		},
+		{
+			"Name": "Bank Of Baroda Ltd",
+			"Symbol": "BANKBARODA",
+			"LotSize": "5850"
+		},
+		{
+			"Name": "Bata India Ltd",
+			"Symbol": "BATAINDIA",
+			"LotSize": "275"
+		},
+		{
+			"Name": "Berger Paints Ltd",
+			"Symbol": "BERGEPAINT",
+			"LotSize": "1100"
+		},
+		{
+			"Name": "Bharat Electronics Ltd",
+			"Symbol": "BEL",
+			"LotSize": "3800"
+		},
+		{
+			"Name": "Bharat Forge Ltd",
+			"Symbol": "BHARATFORG",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Bharat Petroleum Ltd",
+			"Symbol": "BPCL",
+			"LotSize": "1800"
+		},
+		{
+			"Name": "Bharti Airtel Ltd",
+			"Symbol": "BHARTIARTL",
+			"LotSize": "950"
+		},
+		{
+			"Name": "Bharti Infratel Ltd",
+			"Symbol": "BHARTIARTL",
+			"LotSize": "950"
+		},
+		{
+			"Name": "Bhel Bharat Heavy Electricals Ltd",
+			"Symbol": "BHEL",
+			"LotSize": "10500"
+		},
+		{
+			"Name": "Biocon Ltd",
+			"Symbol": "BIOCON",
+			"LotSize": "2300"
+		},
+		{
+			"Name": "Birlasoft Ltd",
+			"Symbol": "BSOFT",
+			"LotSize": "1300"
+		},
+		{
+			"Name": "Bosch Ltd",
+			"Symbol": "BOSCHLTD",
+			"LotSize": "50"
+		},
+		{
+			"Name": "Britannia Industries Ltd",
+			"Symbol": "BRITANNIA",
+			"LotSize": "200"
+		},
+		{
+			"Name": "Canara Bank Ltd",
+			"Symbol": "CANBK",
+			"LotSize": "2700"
+		},
+		{
+			"Name": "Can Fin Homes Ltd",
+			"Symbol": "CANFINHOME",
+			"LotSize": "975"
+		},
+		{
+			"Name": "Chambal Fertilisers Chemicals Ltd",
+			"Symbol": "CHAMBLFERT",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Cholamandalam Investment Ltd",
+			"Symbol": "CHOLAFIN",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Cipla Ltd",
+			"Symbol": "CIPLA",
+			"LotSize": "650"
+		},
+		{
+			"Name": "City Union Bank Ltd",
+			"Symbol": "CUB",
+			"LotSize": "5000"
+		},
+		{
+			"Name": "Coal India Ltd",
+			"Symbol": "COALINDIA",
+			"LotSize": "4200"
+		},
+		{
+			"Name": "Coforge Ltd",
+			"Symbol": "COFORGE",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Colgate Palmolive Ltd",
+			"Symbol": "COLPAL",
+			"LotSize": "350"
+		},
+		{
+			"Name": "Coromandel International Ltd",
+			"Symbol": "COROMANDEL",
+			"LotSize": "700"
+		},
+		{
+			"Name": "Crompton Greaves Consumer Electricals Ltd",
+			"Symbol": "CROMPTON",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Cummins India Ltd",
+			"Symbol": "CUMMINSIND",
+			"LotSize": "600"
+		},
+		{
+			"Name": "Dabur India Ltd",
+			"Symbol": "DABUR",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Dalmia Bharat Sugar Industries Ltd",
+			"Symbol": "DALMIASUG",
+			"LotSize": "500"
+		},
+		{
+			"Name": "Deepak Nitrite Ltd",
+			"Symbol": "DEEPAKNTR",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Delta Corp Ltd",
+			"Symbol": "DELTACORP",
+			"LotSize": "2300"
+		},
+		{
+			"Name": "Divis Laboratories Ltd",
+			"Symbol": "DIVISLAB",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Dixon Technologies Ltd",
+			"Symbol": "DIXON",
+			"LotSize": "125"
+		},
+		{
+			"Name": "Dlf Ltd",
+			"Symbol": "DLF",
+			"LotSize": "1650"
+		},
+		{
+			"Name": "Dr Lal Pathlabs Ltd",
+			"Symbol": "LALPATHLAB",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Dr Reddys Laboratories Ltd",
+			"Symbol": "DRREDDY",
+			"LotSize": "125"
+		},
+		{
+			"Name": "Eicher Motors Ltd",
+			"Symbol": "EICHERMOT",
+			"LotSize": "350"
+		},
+		{
+			"Name": "Escorts Ltd",
+			"Symbol": "ESCORTS",
+			"LotSize": "550"
+		},
+		{
+			"Name": "Exide Industries Ltd",
+			"Symbol": "EXIDEIND",
+			"LotSize": "3600"
+		},
+		{
+			"Name": "Federal Bank Ltd",
+			"Symbol": "FEDERALBNK",
+			"LotSize": "10000"
+		},
+		{
+			"Name": "Firstsource Solutions Ltd",
+			"Symbol": "FSL",
+			"LotSize": "5200"
+		},
+		{
+			"Name": "Gail Ltd",
+			"Symbol": "GAIL",
+			"LotSize": "6100"
+		},
+		{
+			"Name": "Glenmark Pharmaceuticals Ltd",
+			"Symbol": "GLENMARK",
+			"LotSize": "1150"
+		},
+		{
+			"Name": "Gmr Infrastructure Ltd",
+			"Symbol": "GMRINFRA",
+			"LotSize": "22500"
+		},
+		{
+			"Name": "Gnfc Ltd",
+			"Symbol": "GNFC",
+			"LotSize": "1300"
+		},
+		{
+			"Name": "Godrej Consumer Products Ltd",
+			"Symbol": "GODREJCP",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Godrej Properties Ltd",
+			"Symbol": "GODREJPROP",
+			"LotSize": "325"
+		},
+		{
+			"Name": "Granules India Ltd",
+			"Symbol": "GRANULES",
+			"LotSize": "2000"
+		},
+		{
+			"Name": "Grasim Industries Ltd",
+			"Symbol": "GRASIM",
+			"LotSize": "475"
+		},
+		{
+			"Name": "Gujarat Gas Ltd",
+			"Symbol": "GUJGASLTD",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Gujarat State Petronet Ltd",
+			"Symbol": "GSPL",
+			"LotSize": "2500"
+		},
+		{
+			"Name": "Hal Hindustan Aeronautics Ltd",
+			"Symbol": "HAL",
+			"LotSize": "475"
+		},
+		{
+			"Name": "Havells India Ltd",
+			"Symbol": "HAVELLS",
+			"LotSize": "500"
+		},
+		{
+			"Name": "Hcl Technologies Ltd",
+			"Symbol": "HCLTECH",
+			"LotSize": "700"
+		},
+		{
+			"Name": "Hdfc Asset Management Company Ltd",
+			"Symbol": "HDFCAMC",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Hdfc Bank Ltd",
+			"Symbol": "HDFCBANK",
+			"LotSize": "550"
+		},
+		{
+			"Name": "Hdfc Life Insurance Ltd",
+			"Symbol": "HDFCLIFE",
+			"LotSize": "1100"
+		},
+		{
+			"Name": "Hdfc Ltd",
+			"Symbol": "HDFC",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Hero Motocorp Ltd",
+			"Symbol": "HEROMOTOCO",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Hindalco Industries Ltd",
+			"Symbol": "HINDALCO",
+			"LotSize": "1075"
+		},
+		{
+			"Name": "Hindustan Copper Ltd",
+			"Symbol": "HINDCOPPER",
+			"LotSize": "4300"
+		},
+		{
+			"Name": "Hindustan Petroleum Ltd",
+			"Symbol": "HINDPETRO",
+			"LotSize": "2700"
+		},
+		{
+			"Name": "Hindustan Unilever Ltd",
+			"Symbol": "HINDUNILVR",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Honeywell Automation Ltd",
+			"Symbol": "HONAUT",
+			"LotSize": "15"
+		},
+		{
+			"Name": "Icici Bank Ltd",
+			"Symbol": "ICICIBANK",
+			"LotSize": "1375"
+		},
+		{
+			"Name": "Icici Lombard General Insurance Ltd",
+			"Symbol": "ICICIGI",
+			"LotSize": "425"
+		},
+		{
+			"Name": "Icici Prudential Life Insurance Ltd",
+			"Symbol": "ICICIPRULI",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Idfc First Bank Ltd",
+			"Symbol": "IDFCFIRSTB",
+			"LotSize": "15000"
+		},
+		{
+			"Name": "Idfc Ltd",
+			"Symbol": "IDFC",
+			"LotSize": "10000"
+		},
+		{
+			"Name": "Indiabulls Housing Finance Ltd",
+			"Symbol": "IBULHSGFIN",
+			"LotSize": "4000"
+		},
+		{
+			"Name": "India Cements Ltd",
+			"Symbol": "INDIACEM",
+			"LotSize": "2900"
+		},
+		{
+			"Name": "Indiamart Intermesh Ltd",
+			"Symbol": "INDIAMART",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Indian Energy Exchange Ltd",
+			"Symbol": "INDIACEM",
+			"LotSize": "3750"
+		},
+		{
+			"Name": "Indian Hotels Company Ltd",
+			"Symbol": "INDHOTEL",
+			"LotSize": "4022"
+		},
+		{
+			"Name": "Indian Oil Corporation Ltd",
+			"Symbol": "IOC",
+			"LotSize": "9750"
+		},
+		{
+			"Name": "Indigo Interglobe Aviation Ltd",
+			"Symbol": "INDIGO",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Indraprastha Gas Ltd",
+			"Symbol": "IGL",
+			"LotSize": "1375"
+		},
+		{
+			"Name": "Indusind Bank Ltd",
+			"Symbol": "INDUSINDBK",
+			"LotSize": "900"
+		},
+		{
+			"Name": "Infosys Ltd",
+			"Symbol": "INFY",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Intellect Design Arena Ltd",
+			"Symbol": "INTELLECT",
+			"LotSize": "750"
+		},
+		{
+			"Name": "Ipca Laboratories Ltd",
+			"Symbol": "IPCALAB",
+			"LotSize": "650"
+		},
+		{
+			"Name": "Irctc Ltd",
+			"Symbol": "IRCTC",
+			"LotSize": "875"
+		},
+		{
+			"Name": "Itc Ltd",
+			"Symbol": "ITC",
+			"LotSize": "3200"
+		},
+		{
+			"Name": "Jindal Steel Ltd",
+			"Symbol": "JINDALSTEL",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Jk Cement Ltd",
+			"Symbol": "JKCEMENT",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Jsw Steel Ltd",
+			"Symbol": "JSWSTEEL",
+			"LotSize": "1350"
+		},
+		{
+			"Name": "Jubilant Foodworks Ltd",
+			"Symbol": "JUBLFOOD",
+			"LotSize": "1250"
+		},
+		{
+			"Name": "Kotak Mahindra Bank Ltd",
+			"Symbol": "KOTAKBANK",
+			"LotSize": "400"
+		},
+		{
+			"Name": "Laurus Labs Ltd",
+			"Symbol": "LAURUSLABS",
+			"LotSize": "900"
+		},
+		{
+			"Name": "Lic Housing Finance Ltd",
+			"Symbol": "LICHSGFIN",
+			"LotSize": "2000"
+		},
+		{
+			"Name": "Lt Finance Holdings Ltd",
+			"Symbol": "L&amp;TFH",
+			"LotSize": "8924"
+		},
+		{
+			"Name": "Lti Larsen Toubro Infotech Ltd",
+			"Symbol": "LTI",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Lt Larsen Toubro Ltd",
+			"Symbol": "LT",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Lt Technology Services Ltd",
+			"Symbol": "LTTS",
+			"LotSize": "200"
+		},
+		{
+			"Name": "Lupin Ltd",
+			"Symbol": "LUPIN",
+			"LotSize": "850"
+		},
+		{
+			"Name": "Mahanagar Gas Ltd",
+			"Symbol": "MGL",
+			"LotSize": "800"
+		},
+		{
+			"Name": "Mahindra Mahindra Financial Services Ltd",
+			"Symbol": "M&amp;MFIN",
+			"LotSize": "4000"
+		},
+		{
+			"Name": "Mahindra Mahindra Ltd",
+			"Symbol": "M&amp;M",
+			"LotSize": "700"
+		},
+		{
+			"Name": "Manappuram Finance Ltd",
+			"Symbol": "MANAPPURAM",
+			"LotSize": "6000"
+		},
+		{
+			"Name": "Marico Ltd",
+			"Symbol": "MARICO",
+			"LotSize": "1200"
+		},
+		{
+			"Name": "Maruti Suzuki Ltd",
+			"Symbol": "MARUTI",
+			"LotSize": "100"
+		},
+		{
+			"Name": "Max Financial Services Ltd",
+			"Symbol": "MFSL",
+			"LotSize": "650"
+		},
+		{
+			"Name": "Metropolis Healthcare Ltd",
+			"Symbol": "METROPOLIS",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Mindtree Ltd",
+			"Symbol": "MINDTREE",
+			"LotSize": "200"
+		},
+		{
+			"Name": "Motherson Sumi Systems Ltd",
+			"Symbol": "MOTHERSON",
+			"LotSize": "4500"
+		},
+		{
+			"Name": "Mphasis Ltd",
+			"Symbol": "MPHASIS",
+			"LotSize": "175"
+		},
+		{
+			"Name": "Mrf Ltd",
+			"Symbol": "MRF",
+			"LotSize": "10"
+		},
+		{
+			"Name": "Multi Commodity Exchange Ltd",
+			"Symbol": "MCX",
+			"LotSize": "400"
+		},
+		{
+			"Name": "Muthoot Finance Ltd",
+			"Symbol": "MUTHOOTFIN",
+			"LotSize": "375"
+		},
+		{
+			"Name": "National Aluminium Company Ltd",
+			"Symbol": "NATIONALUM",
+			"LotSize": "4250"
+		},
+		{
+			"Name": "Naukri Info Edge Ltd",
+			"Symbol": "NAUKRI",
+			"LotSize": "125"
+		},
+		{
+			"Name": "Navin Fluorine International Ltd",
+			"Symbol": "NAVINFLUOR",
+			"LotSize": "225"
+		},
+		{
+			"Name": "Nbcc Ltd",
+			"Symbol": "NBCC",
+			"LotSize": "15000"
+		},
+		{
+			"Name": "Nestle India Ltd",
+			"Symbol": "NESTLEIND",
+			"LotSize": "40"
+		},
+		{
+			"Name": "Nippon Life India Asset Management Ltd",
+			"Symbol": "NAM-INDIA",
+			"LotSize": "1600"
+		},
+		{
+			"Name": "Nmdc Ltd",
+			"Symbol": "NMDC",
+			"LotSize": "3350"
+		},
+		{
+			"Name": "Ntpc Ltd",
+			"Symbol": "NTPC",
+			"LotSize": "5700"
+		},
+		{
+			"Name": "Oberoi Realty Ltd",
+			"Symbol": "OBEROIRLTY",
+			"LotSize": "700"
+		},
+		{
+			"Name": "Oil Natural Gas Corporation Ltd",
+			"Symbol": "ONGC",
+			"LotSize": "3850"
+		},
+		{
+			"Name": "Oracle Financial Services Software Ltd",
+			"Symbol": "OFSS",
+			"LotSize": "200"
+		},
+		{
+			"Name": "Page Industries Ltd",
+			"Symbol": "PAGEIND",
+			"LotSize": "15"
+		},
+		{
+			"Name": "Persistent Systems Ltd",
+			"Symbol": "PERSISTENT",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Petronet Lng Ltd",
+			"Symbol": "PETRONET",
+			"LotSize": "3000"
+		},
+		{
+			"Name": "Pidilite Industries Ltd",
+			"Symbol": "PIDILITIND",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Pi Industries Ltd",
+			"Symbol": "PIIND",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Piramal Enterprises Ltd",
+			"Symbol": "PEL",
+			"LotSize": "275"
+		},
+		{
+			"Name": "Polycab India Ltd",
+			"Symbol": "POLYCAB",
+			"LotSize": "300"
+		},
+		{
+			"Name": "Power Finance Corporation Ltd",
+			"Symbol": "PFC",
+			"LotSize": "6200"
+		},
+		{
+			"Name": "Power Grid Corporation Of India Ltd",
+			"Symbol": "POWERGRID",
+			"LotSize": "2700"
+		},
+		{
+			"Name": "Punjab National Bank Ltd",
+			"Symbol": "PNB",
+			"LotSize": "16000"
+		},
+		{
+			"Name": "Pvr Cinemas Ltd",
+			"Symbol": "PVR",
+			"LotSize": "407"
+		},
+		{
+			"Name": "Rain Industries Ltd",
+			"Symbol": "RAIN",
+			"LotSize": "3500"
+		},
+		{
+			"Name": "Ramco Cements Ltd",
+			"Symbol": "RAMCOCEM",
+			"LotSize": "850"
+		},
+		{
+			"Name": "Rbl Bank Ltd",
+			"Symbol": "RBLBANK",
+			"LotSize": "5000"
+		},
+		{
+			"Name": "Reliance Industries Ltd",
+			"Symbol": "RELIANCE",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Rural Electrification Corporation Ltd",
+			"Symbol": "RECLTD",
+			"LotSize": "6000"
+		},
+		{
+			"Name": "Sbi Cards Ltd",
+			"Symbol": "SBICARD",
+			"LotSize": "800"
+		},
+		{
+			"Name": "Sbi Life Insurance Ltd",
+			"Symbol": "SRTRANSFIN",
+			"LotSize": "750"
+		},
+		{
+			"Name": "Shree Cement Ltd",
+			"Symbol": "SHREECEM",
+			"LotSize": "25"
+		},
+		{
+			"Name": "Shriram Transport Finance Company Ltd",
+			"Symbol": "SBILIFE",
+			"LotSize": "600"
+		},
+		{
+			"Name": "Siemens Ltd",
+			"Symbol": "SIEMENS",
+			"LotSize": "275"
+		},
+		{
+			"Name": "Srf Ltd",
+			"Symbol": "SRF",
+			"LotSize": "375"
+		},
+		{
+			"Name": "State Bank Of India Ltd",
+			"Symbol": "SBIN",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Steel Authority Of India Ltd",
+			"Symbol": "SAIL",
+			"LotSize": "6000"
+		},
+		{
+			"Name": "Sun Pharmaceutical Ltd",
+			"Symbol": "SUNPHARMA",
+			"LotSize": "700"
+		},
+		{
+			"Name": "Sun Tv Network Ltd",
+			"Symbol": "SUNTV",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Syngene International Ltd",
+			"Symbol": "SYNGENE",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Syngene International Ltd",
+			"Symbol": "SYNGENE",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Tata Chemicals Ltd",
+			"Symbol": "TATACHEM",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Tata Communications Ltd",
+			"Symbol": "TATACOMM",
+			"LotSize": "500"
+		},
+		{
+			"Name": "Tata Consumer Products Ltd",
+			"Symbol": "TATACONSUM",
+			"LotSize": "900"
+		},
+		{
+			"Name": "Tata Motors Ltd",
+			"Symbol": "TATAMOTORS",
+			"LotSize": "1425"
+		},
+		{
+			"Name": "Tata Power Ltd",
+			"Symbol": "TATAPOWER",
+			"LotSize": "3375"
+		},
+		{
+			"Name": "Tata Steel Ltd",
+			"Symbol": "TATASTEEL",
+			"LotSize": "425"
+		},
+		{
+			"Name": "Tcs Tata Consultancy Services Ltd",
+			"Symbol": "TCS",
+			"LotSize": "150"
+		},
+		{
+			"Name": "Tech Mahindra Ltd",
+			"Symbol": "TECHM",
+			"LotSize": "600"
+		},
+		{
+			"Name": "Titan Ltd",
+			"Symbol": "TITAN",
+			"LotSize": "375"
+		},
+		{
+			"Name": "Torrent Pharmaceuticals Ltd",
+			"Symbol": "TORNTPHARM",
+			"LotSize": "250"
+		},
+		{
+			"Name": "Torrent Power Ltd",
+			"Symbol": "TORNTPOWER",
+			"LotSize": "1500"
+		},
+		{
+			"Name": "Trent Ltd",
+			"Symbol": "TRENT",
+			"LotSize": "725"
+		},
+		{
+			"Name": "Tvs Motors Ltd",
+			"Symbol": "TVSMOTOR",
+			"LotSize": "1400"
+		},
+		{
+			"Name": "Ultratech Cement Ltd",
+			"Symbol": "ULTRACEMCO",
+			"LotSize": "100"
+		},
+		{
+			"Name": "United Breweries Ltd",
+			"Symbol": "UBL",
+			"LotSize": "400"
+		},
+		{
+			"Name": "United Spirits Ltd",
+			"Symbol": "MCDOWELL-N",
+			"LotSize": "625"
+		},
+		{
+			"Name": "Upl United Phosphorus Ltd",
+			"Symbol": "UPL",
+			"LotSize": "1300"
+		},
+		{
+			"Name": "Vedanta Ltd",
+			"Symbol": "VEDL",
+			"LotSize": "1550"
+		},
+		{
+			"Name": "Vodafone Idea Ltd",
+			"Symbol": "IDEA",
+			"LotSize": "70000"
+		},
+		{
+			"Name": "Voltas Ltd",
+			"Symbol": "VOLTAS",
+			"LotSize": "500"
+		},
+		{
+			"Name": "Whirlpool Of India Ltd",
+			"Symbol": "WHIRLPOOL",
+			"LotSize": "350"
+		},
+		{
+			"Name": "Wipro Ltd",
+			"Symbol": "WIPRO",
+			"LotSize": "1000"
+		},
+		{
+			"Name": "Zee Entertainment Ltd",
+			"Symbol": "ZEEL",
+			"LotSize": "3000"
+		}
+	]
+}

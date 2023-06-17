@@ -266,5 +266,11 @@ namespace OptionsOracle.Server.PlugIn
             try { server.SetParameterList(name, value); }
             catch { }
         }
+
+        public List<string> GetAllStockList()
+        {
+            try { return server.GetAllStockList(); }
+            catch { return null; }
+        }
     }
 }

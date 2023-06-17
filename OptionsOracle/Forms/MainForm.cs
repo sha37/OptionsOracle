@@ -349,13 +349,33 @@ namespace OptionsOracle.Forms
             //try to add stock lists
             try
             {
-
+                UpdateStockTextList();
             }
             catch {; }
+
             // link data grid view to core data
             optionsTableBindingSource.DataSource = core.OptionsTable;
             positionsTableBindingSource.DataSource = core.PositionsTable;
             resultsTableBindingSource.DataSource = core.ResultsTable;
+        }
+
+        public void UpdateStockTextList()
+        {
+            List<string> stockList = Comm.Server.GetAllStockList();
+            if (stockList != null)
+            {
+                AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+                source.AddRange(stockList.ToArray());
+
+
+                stockText.AutoCompleteCustomSource = source;
+                stockText.AutoCompleteMode = AutoCompleteMode.Suggest;
+                stockText.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+            else
+            {
+                stockText.AutoCompleteCustomSource =null;
+            }
         }
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
@@ -815,7 +835,8 @@ namespace OptionsOracle.Forms
         }
 
         private void RefreshUI(string ticker)
-        {            
+        {
+            var s = Comm.Server.GetAllStockList();
             bool reset_filters = true;
 
             // refresh or update?

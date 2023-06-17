@@ -53,6 +53,8 @@ namespace OOServerNSE
         // connection status
         private bool connect = false;
 
+        //symbol storage
+        List<string> symbolSet = null;
         // feature and server array list
         private ArrayList feature_list = new ArrayList();
         private ArrayList server_list = new ArrayList();
@@ -156,8 +158,10 @@ namespace OOServerNSE
             switch (ticker)
             {
                 case "NIFTY":
+                case "NIFTY 50":
                     return "^NIFTY";
                 case "BANKNIFTY":
+                case "NIFTY BANK":
                     return "^BANKNIFTY";
                 case "CNXIT":
                     return "^CNXIT";
@@ -550,6 +554,20 @@ namespace OOServerNSE
 
         public void SetParameterList(string name, ArrayList value)
         {
+        }
+
+        public List<string> GetAllStockList()
+        {
+            List<string> names = null;
+            try
+            {
+                string fileDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\OptionsOracle\plugin_nse_symbols.json";
+                string jsonString = File.ReadAllText(fileDir);
+                Root myJsonObject = JsonConvert.DeserializeObject<Root>(jsonString);
+                names = myJsonObject.StockLists.Select(stock => stock.Symbol).ToList();
+            }
+            catch {; }
+            return names;
         }
     }
 }

@@ -128,5 +128,8 @@ namespace OOServerLib.Interface
         // get and set generic parameters list
         ArrayList GetParameterList(string name);
         void SetParameterList(string name, ArrayList value);
+
+        //get the Stock source for stockText autocomplete
+        List<string> GetAllStockList();
     }
 }
