@@ -199,11 +199,13 @@ namespace OptionsOracle.Forms
             this.changeText = new System.Windows.Forms.TextBox();
             this.bidText = new System.Windows.Forms.TextBox();
             this.dividendText = new System.Windows.Forms.TextBox();
+            this.lotsText = new System.Windows.Forms.TextBox();
             this.lastPriceLabel = new System.Windows.Forms.Label();
             this.changeLabel = new System.Windows.Forms.Label();
             this.bidAskLabel = new System.Windows.Forms.Label();
             this.lastUpdateText = new System.Windows.Forms.TextBox();
             this.dividendLabel = new System.Windows.Forms.Label();
+            this.lotsLabel = new System.Windows.Forms.Label();
             this.lastUpdateLabel = new System.Windows.Forms.Label();
             this.optionSelectionGroupBox1 = new System.Windows.Forms.GroupBox();
             this.putsCheckBox = new System.Windows.Forms.CheckBox();
@@ -1825,6 +1827,21 @@ namespace OptionsOracle.Forms
             this.dividendText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.xxxText_KeyUp);
             this.dividendText.Leave += new System.EventHandler(this.xxxText_Leave);
             // 
+            // lotsText
+            // 
+            this.lotsText.BackColor = System.Drawing.Color.Black;
+            this.lotsText.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lotsText.ForeColor = System.Drawing.Color.Cornsilk;
+            this.lotsText.Location = new System.Drawing.Point(75, 193);
+            this.lotsText.Name = "lotsText";
+            this.lotsText.Size = new System.Drawing.Size(94, 20);
+            this.lotsText.TabIndex = 0;
+            this.lotsText.TabStop = false;
+            this.lotsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lotsText.Enter += new System.EventHandler(this.xxxText_Enter);
+            this.lotsText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.xxxText_KeyUp);
+            this.lotsText.Leave += new System.EventHandler(this.xxxText_Leave);
+            // 
             // lastPriceLabel
             // 
             this.lastPriceLabel.AutoSize = true;
@@ -2087,6 +2104,15 @@ namespace OptionsOracle.Forms
             this.impHisLabel.TabIndex = 0;
             this.impHisLabel.Text = "Imp / His %";
             // 
+            // lotsLabel
+            // 
+            this.lotsLabel.AutoSize = true;
+            this.lotsLabel.Location = new System.Drawing.Point(8, 198);
+            this.lotsLabel.Name = "lotsLabel";
+            this.lotsLabel.Size = new System.Drawing.Size(61, 13);
+            this.lotsLabel.TabIndex = 0;
+            this.lotsLabel.Text = "Lot Size";
+            // 
             // impVolatilityText
             // 
             this.impVolatilityText.BackColor = System.Drawing.Color.Black;
@@ -2138,11 +2164,13 @@ namespace OptionsOracle.Forms
             this.stockGroupBox.Controls.Add(this.optionSelectionGroupBox1);
             this.stockGroupBox.Controls.Add(this.lastUpdateLabel);
             this.stockGroupBox.Controls.Add(this.dividendLabel);
+            this.stockGroupBox.Controls.Add(this.lotsLabel);
             this.stockGroupBox.Controls.Add(this.lastUpdateText);
             this.stockGroupBox.Controls.Add(this.bidAskLabel);
             this.stockGroupBox.Controls.Add(this.changeLabel);
             this.stockGroupBox.Controls.Add(this.lastPriceLabel);
             this.stockGroupBox.Controls.Add(this.dividendText);
+            this.stockGroupBox.Controls.Add(this.lotsText);
             this.stockGroupBox.Controls.Add(this.bidText);
             this.stockGroupBox.Controls.Add(this.changeText);
             this.stockGroupBox.Controls.Add(this.lastPriceText);
@@ -2232,7 +2260,7 @@ namespace OptionsOracle.Forms
             // topSplitContainer.Panel2
             // 
             this.topSplitContainer.Panel2.Controls.Add(this.bottomSplitContainer);
-            this.topSplitContainer.Size = new System.Drawing.Size(1023, 716);
+            this.topSplitContainer.Size = new System.Drawing.Size(1023, 685);
             this.topSplitContainer.SplitterDistance = 211;
             this.topSplitContainer.SplitterWidth = 1;
             this.topSplitContainer.TabIndex = 40;
@@ -2414,11 +2442,13 @@ namespace OptionsOracle.Forms
         private System.Windows.Forms.TextBox changeText;
         private System.Windows.Forms.TextBox bidText;
         private System.Windows.Forms.TextBox dividendText;
+        private System.Windows.Forms.TextBox lotsText;
         private System.Windows.Forms.Label lastPriceLabel;
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Label bidAskLabel;
         private System.Windows.Forms.TextBox lastUpdateText;
         private System.Windows.Forms.Label dividendLabel;
+        private System.Windows.Forms.Label lotsLabel;
         private System.Windows.Forms.Label lastUpdateLabel;
         private System.Windows.Forms.GroupBox optionSelectionGroupBox1;
         private System.Windows.Forms.CheckBox putsCheckBox;

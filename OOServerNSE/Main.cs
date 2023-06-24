@@ -306,6 +306,7 @@ namespace OOServerNSE
                             quote.volume.total = double.NaN;
                             quote.general.dividend_rate = 0;
                         }
+                        quote.lotSize = Convert.ToDouble(GetJsonValues(quote.stock).LotSize);
                         quote.price.change = quote.price.last - quote.price.open;
 
                     }
@@ -354,6 +355,7 @@ namespace OOServerNSE
 
                     quote.volume.total = double.NaN;
                     quote.general.dividend_rate = 0;
+                    quote.lotSize = Convert.ToDouble(GetJsonValues(quote.stock).LotSize);
 
                     return quote;
 
@@ -555,19 +557,25 @@ namespace OOServerNSE
         public void SetParameterList(string name, ArrayList value)
         {
         }
-
+        List<string> stocknames = null;
+        Root stockJsonObject = null;
         public List<string> GetAllStockList()
         {
-            List<string> names = null;
+           
             try
             {
                 string fileDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\OptionsOracle\plugin_nse_symbols.json";
                 string jsonString = File.ReadAllText(fileDir);
-                Root myJsonObject = JsonConvert.DeserializeObject<Root>(jsonString);
-                names = myJsonObject.StockLists.Select(stock => stock.Symbol).ToList();
+                stockJsonObject = JsonConvert.DeserializeObject<Root>(jsonString);
+                stocknames = stockJsonObject.StockLists.Select(stock => stock.Symbol).ToList();
             }
             catch {; }
-            return names;
+            return stocknames;
+        }
+
+        public StockList GetJsonValues(string stockName)
+        {
+            return stockJsonObject.StockLists.Where(x => (x.Symbol == stockName || x.Name == stockName)).First();
         }
     }
 }

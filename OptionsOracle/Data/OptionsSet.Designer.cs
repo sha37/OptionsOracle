@@ -913,7 +913,7 @@ namespace OptionsOracle.Data {
                         double ITMProb, 
                         double StdDevFromStock, 
                         double Indicator1, 
-                        double Indicator2, 
+                        double Indicator2,
                         double Change_OI, 
                         string OptionStrategy) {
                 OptionsTableRow rowOptionsTableRow = ((OptionsTableRow)(this.NewRow()));
@@ -1226,6 +1226,8 @@ namespace OptionsOracle.Data {
             
             private global::System.Data.DataColumn columnDividendRate;
             
+            private global::System.Data.DataColumn columnlotSize;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public QuotesTableDataTable() {
@@ -1373,6 +1375,14 @@ namespace OptionsOracle.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lotSizeColumn {
+                get {
+                    return this.columnlotSize;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1408,7 +1418,7 @@ namespace OptionsOracle.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QuotesTableRow AddQuotesTableRow(string Stock, string Name, double Last, double Change, double Open, double Low, double High, double Bid, double Ask, double Volume, System.DateTime UpdateTimeStamp, double HistoricalVolatility, double ImpliedVolatility, double DividendRate) {
+            public QuotesTableRow AddQuotesTableRow(string Stock, string Name, double Last, double Change, double Open, double Low, double High, double Bid, double Ask, double Volume, System.DateTime UpdateTimeStamp, double HistoricalVolatility, double ImpliedVolatility, double DividendRate, double lotSize) {
                 QuotesTableRow rowQuotesTableRow = ((QuotesTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Stock,
@@ -1424,7 +1434,8 @@ namespace OptionsOracle.Data {
                         UpdateTimeStamp,
                         HistoricalVolatility,
                         ImpliedVolatility,
-                        DividendRate};
+                        DividendRate,
+                        lotSize};
                 rowQuotesTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQuotesTableRow);
                 return rowQuotesTableRow;
@@ -1461,6 +1472,7 @@ namespace OptionsOracle.Data {
                 this.columnHistoricalVolatility = base.Columns["HistoricalVolatility"];
                 this.columnImpliedVolatility = base.Columns["ImpliedVolatility"];
                 this.columnDividendRate = base.Columns["DividendRate"];
+                this.columnlotSize = base.Columns["lotSize"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1494,6 +1506,8 @@ namespace OptionsOracle.Data {
                 base.Columns.Add(this.columnImpliedVolatility);
                 this.columnDividendRate = new global::System.Data.DataColumn("DividendRate", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDividendRate);
+                this.columnlotSize = new global::System.Data.DataColumn("lotSize", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlotSize);
                 this.columnUpdateTimeStamp.Caption = "Update Time Stamp";
                 this.columnDividendRate.DefaultValue = ((double)(0D));
             }
@@ -5092,6 +5106,22 @@ namespace OptionsOracle.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double lotSize {
+                get {
+                    try {
+                        return ((double)(this[this.tableQuotesTable.lotSizeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lotSize\' in table \'QuotesTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuotesTable.lotSizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsStockNull() {
                 return this.IsNull(this.tableQuotesTable.StockColumn);
             }
@@ -5256,6 +5286,18 @@ namespace OptionsOracle.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDividendRateNull() {
                 this[this.tableQuotesTable.DividendRateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslotSizeNull() {
+                return this.IsNull(this.tableQuotesTable.lotSizeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlotSizeNull() {
+                this[this.tableQuotesTable.lotSizeColumn] = global::System.Convert.DBNull;
             }
         }
         

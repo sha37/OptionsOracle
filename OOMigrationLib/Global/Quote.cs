@@ -67,6 +67,7 @@ namespace OOMigrationLib.Global
 
         public string underlying;
         public string name;
+        public double lotSize;
         public PriceT price;
         public VolumeT volume;
         public DividendT general;

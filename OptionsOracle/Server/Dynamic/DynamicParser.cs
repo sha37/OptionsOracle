@@ -1167,6 +1167,7 @@ namespace OptionsOracle.Server.Dynamic
                         quote.price.ask = (val == "NaN") ? double.NaN : double.Parse(val);
                         val = vars_string[sid + "quote.volume.total"];
                         quote.volume.total = (val == "NaN") ? double.NaN : double.Parse(val);
+                        quote.lotSize   = (val == "NaN") ? double.NaN : double.Parse(val);
 
                         // add quote to list
                         lock (list_object)

@@ -16,20 +16,23 @@ and find optimal trading strategies.
 
 ## Getting Started
 
-# OptionsOracle v1.7.2(Latest)
+# OptionsOracle v1.7.3(Latest)
 
 ## What's New?
 
-### Dynamic Stock List Appending
+In this version of OptionsOracle, we've added the feature to display the option lot size. This is an essential piece of information for traders, and having it readily available on the display will make trading decisions faster and easier.
 
-We have made a significant upgrade to the handling of our stock lists. Now, the stock list is dynamically appended to the stock text depending on the plugin and its resources. This feature has currently been implemented for NSE (National Stock Exchange) only, but we are looking to expand it to other exchanges in future updates.
-
-### NSE Stock Template
-
-We've introduced a new stock template in JSON format for NSE. This will make it easier for users to work with NSE stocks and will provide a more standardized format for our stock data.
+### Updates
+- Implemented display of option lot size.
 
 ## Previous Updates:
 
+##v1.7.2
+
+### Dynamic Stock List Appending
+
+-We have made a significant upgrade to the handling of our stock lists. Now, the stock list is dynamically appended to the stock text depending on the plugin and its resources. This feature has currently been implemented for NSE (National Stock Exchange) only, but we are looking to expand it to other exchanges in future updates.
+-introduced a new stock template in JSON format for NSE. This will make it easier for users to work with NSE stocks and will provide a more standardized format for our stock data.
 
 ##v1.7.1	
 -Implemented strike combo box to filter the option grid view.

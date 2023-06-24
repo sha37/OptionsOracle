@@ -47,7 +47,9 @@ namespace OOServerLib.Global
         };
 
         public string   stock;
-        public string   name;      
+        public string   name;
+        public double   lotSize;
+        public string   Symbol;
         public PriceT   price;
         public VolumeT  volume;
         public GeneralT general;

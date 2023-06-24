@@ -40,6 +40,7 @@ namespace OptionsOracle.DataCenter.Data
             "Underlying.Volume",
             "Underlying.DivRate",
             "Underlying.HisVolatility",
+            "Underlying.LotSize",
             "Underlying.TimeStamp",
 
             // option

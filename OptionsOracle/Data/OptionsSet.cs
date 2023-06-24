@@ -730,6 +730,10 @@ namespace OptionsOracle.Data
         {
             get { QuotesTableRow row = GetQuoteRow(); if (row.IsStockNull()) return null; else return row.Stock; }
         }
+        public double LotSize
+        {
+            get { QuotesTableRow row = GetQuoteRow(); if (row.IslotSizeNull()) return double.NaN; else return row.lotSize; }
+        }
 
         public string StockName
         {
@@ -1136,6 +1140,7 @@ namespace OptionsOracle.Data
             {
                 row.Stock = quote.stock;
                 row.Name = quote.name;
+                row.lotSize = quote.lotSize;
                 row.Last = quote.price.last;
                 row.Change = quote.price.change;
                 row.Open = quote.price.open;
@@ -1368,6 +1373,9 @@ namespace OptionsOracle.Data
 
                 if (row.IsVolumeNull()) quote.volume.total = double.NaN;
                 else quote.volume.total = row.Volume;
+
+                if (row.IslotSizeNull()) quote.lotSize = double.NaN;
+                else quote.lotSize = row.lotSize;
 
                 if (row.IsDividendRateNull()) quote.general.dividend_rate = double.NaN;
                 else quote.general.dividend_rate = row.DividendRate;

@@ -54,6 +54,7 @@ namespace OOMigrationLib.Global
         public string underlying;           // option underlying
         public string symbol;               // option symbol        
         public double strike;               // option strike price        
+        public double lotSize;               // option strike price        
         public DateTime expiration;         // option experation date        
         public PriceT price;
         public VolumeT volume;

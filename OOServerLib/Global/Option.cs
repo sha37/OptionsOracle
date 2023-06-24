@@ -49,7 +49,8 @@ namespace OOServerLib.Global
         public string   type;               // option type ("put" or "call")        
         public string   stock;              // option stock ticker
         public string   symbol;             // option symbol        
-        public double   strike;             // option strike price        
+        public double   strike;             // option strike price
+        public double   lotSize;               // option lot size        
         public DateTime expiration;         // option experation date        
         public PriceT   price;
         public VolumeT  volume;

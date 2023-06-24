@@ -812,6 +812,7 @@ namespace OptionsOracle.Forms
             list3.Add(changeText);
             list3.Add(bidText);
             list3.Add(askText);
+            list3.Add(lotsText);
             list3.Add(dividendText);
             list3.Add(impVolatilityText);
             list3.Add(hisVolatilityText);
@@ -881,6 +882,7 @@ namespace OptionsOracle.Forms
                 changeText.Text = "";
                 bidText.Text = "";
                 askText.Text = "";
+                lotsText.Text = "";
                 dividendText.Text = "";
                 impVolatilityText.Text = "";
                 hisVolatilityText.Text = "";
@@ -909,6 +911,10 @@ namespace OptionsOracle.Forms
                 // update dividend rate
                 if (double.IsNaN(quote.general.dividend_rate)) dividendText.Text = "0.00 %";
                 else dividendText.Text = quote.general.dividend_rate.ToString("P2");
+
+                // update lot size
+                if (double.IsNaN(quote.lotSize)) lotsText.Text = "0";
+                else lotsText.Text = quote.lotSize.ToString();
 
                 // update implied volatility
                 double imp_vol = core.GetStockVolatility("Implied");
@@ -1847,6 +1853,7 @@ namespace OptionsOracle.Forms
             changeText.Text = "";
             bidText.Text = "";
             askText.Text = "";
+            lotsText.Text = "";
             dividendText.Text = "";
             impVolatilityText.Text = "";
             hisVolatilityText.Text = "";
@@ -2190,6 +2197,7 @@ namespace OptionsOracle.Forms
             changeText.Text = "";
             bidText.Text = "";
             askText.Text = "";
+            lotsText.Text = "";
             dividendText.Text = "";
             impVolatilityText.Text = "";
             hisVolatilityText.Text = "";

@@ -39,6 +39,7 @@ namespace OptionsOracle.Migration
             qm.price.high = ql.price.high;
             qm.price.bid = ql.price.bid;
             qm.price.ask = ql.price.ask;
+            qm.lotSize  = ql.lotSize;
 
             qm.volume.total = ql.volume.total;
 
