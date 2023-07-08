@@ -149,7 +149,12 @@ namespace OOServerNSE
         public void ShowConfigForm(object form) { }
 
         // default symbol
-        public string DefaultSymbol { get { return ""; } }
+        public string DefaultSymbol { get { return "NIFTY"; } }
+
+        //Json Varaibles
+
+        List<string> stocknames { get; set; }
+        Root stockJsonObject { set; get; }
 
         public string CorrectSymbol(string ticker)
         {
@@ -483,44 +488,43 @@ namespace OOServerNSE
             return list;
         }
 
+
+
         // get stock name lookup results
         public ArrayList GetStockSymbolLookup(string name)
         {
-            string lookup_url = @"http://finance.yahoo.com/lookup?s=" + name.Replace(suffix, "") + @"&t=S&m=ALL";
+            for(int retries = 0; retries < 3; retries++) 
+            {
+                if (stockJsonObject == null)
+                    GetAllStockList();
+                else
+                    break;
+            }
+              
+            return fetchLookups(name.ToUpper());
 
-            XmlDocument xml = cap.DownloadXmlWebPage(lookup_url);
-            if (xml == null) return null;
+        }
 
+
+        //get lookup stocks
+
+        private ArrayList fetchLookups(string name_uc)
+        {
             ArrayList symbol_list = new ArrayList();
             symbol_list.Capacity = 256;
-
-            for (int i = 0; i < symbol_list.Capacity; i++)
+            foreach (StockList row in stockJsonObject.StockLists)
             {
-                string entry = "";
-
-                XmlNode nd, root_node = prs.GetXmlNodeByPath(xml.FirstChild, @"body\div\br\br\table\tr(3)\td\table(2)\tr(3)\td\table\tr\td\table\tr(" + (i + 2).ToString() + @")");
-                if (root_node == null) break;
-
-                // stock name
-                nd = prs.GetXmlNodeByPath(root_node, @"td(2)");
-                if (nd == null) break;
-                entry = nd.InnerText.Replace('(', '[').Replace(')', ']');
-
-                // stock ticker
-                nd = prs.GetXmlNodeByPath(root_node, @"td(1)\a");
-                if (nd == null) break;
-
-                int x = nd.InnerText.IndexOf('.');
-                if (x >= 0) entry += nd.InnerText.Substring(0, x);
-                else entry += " (" + nd.InnerText + ")";
-
-                // add name + ticker entry
-                if (entry.Contains(suffix)) symbol_list.Add(entry.Replace(suffix, ""));
+                if (row.Name.ToUpper().Contains(name_uc) ||
+                    row.Symbol.ToUpper().Contains(name_uc) ||
+                    row.Symbol.ToUpper().Contains(name_uc.TrimStart(new char[] { '~', '^' })))
+                {
+                    symbol_list.Add(row.Name.Trim().Replace('(', '[').Replace(')', ']') + " (" + row.Symbol + ")");
+                }
             }
-
             symbol_list.TrimToSize();
             return symbol_list;
         }
+
 
         // get default annual interest rate for specified duration [in years]
         public double GetAnnualInterestRate(double duration)
@@ -557,8 +561,6 @@ namespace OOServerNSE
         public void SetParameterList(string name, ArrayList value)
         {
         }
-        List<string> stocknames = null;
-        Root stockJsonObject = null;
         public List<string> GetAllStockList()
         {
            

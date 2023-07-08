@@ -16,16 +16,17 @@ and find optimal trading strategies.
 
 ## Getting Started
 
-# OptionsOracle v1.7.3(Latest)
+# OptionsOracle v1.7.4(Latest)
 
 ## What's New?
 
-In this version of OptionsOracle, we've added the feature to display the option lot size. This is an essential piece of information for traders, and having it readily available on the display will make trading decisions faster and easier.
-
-### Updates
-- Implemented display of option lot size.
+* Implemented stock lookup functionality for NSE. This allows users to efficiently search and select from a wide range of stocks listed on the NSE.
 
 ## Previous Updates:
+
+##v1.7.3
+
+- Implemented display of option lot size.
 
 ##v1.7.2
 
